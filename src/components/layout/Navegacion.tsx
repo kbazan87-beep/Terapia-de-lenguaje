@@ -42,7 +42,7 @@ export function Navegacion({ enlaces }: { enlaces: EnlaceNav[] }) {
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top,0px)]">
       <a href="#contenido" className="sr-only rounded-full bg-petroleo-900 px-4 py-2 text-white focus:not-sr-only focus:absolute focus:top-3 focus:left-3">
         Saltar al contenido
       </a>

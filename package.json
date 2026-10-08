@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:preview": "tsc -b && vite build --mode preview && node scripts/inline-preview.mjs",
+    "build:preview": "tsc -b && vite build --mode preview && node scripts/inline-preview.mjs preview",
+    "build:artifact": "tsc -b && vite build --mode artifact && node scripts/inline-preview.mjs artifact",
     "preview": "vite preview",
     "typecheck": "tsc -b"
   },

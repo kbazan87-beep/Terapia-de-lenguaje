@@ -8,7 +8,8 @@ type Celdas = (string | null)[]
 
 const PARTICIPANTE = 'Kimberli Cardozo'
 const esMia = (v: string | null) => v?.trim() === PARTICIPANTE
-const archivo = { href: excel, nombre: 'Evidencias_semana_1.xlsx' }
+// En la versión publicada como artefacto las descargas están bloqueadas por el visor.
+const archivo = import.meta.env.MODE === 'artifact' ? undefined : { href: excel, nombre: 'Evidencias_semana_1.xlsx' }
 
 const letra = (i: number) => String.fromCharCode(65 + i)
 const sinEncabezado = (i: number) => `Columna ${letra(i)} (sin encabezado)`

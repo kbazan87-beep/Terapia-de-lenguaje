@@ -29,9 +29,9 @@ export function VisorImagen({ evidencia, abierto, cerrar }: Props) {
           <p className="text-xs text-gris">{evidencia.autoria}</p>
         </div>
         <div className="flex items-center gap-1">
-          <a href={evidencia.src} download="mapa-conceptual-semana-1.jpg" className="inline-flex size-10 items-center justify-center rounded-full hover:bg-salvia-50" aria-label="Descargar imagen">
+          {import.meta.env.MODE !== 'artifact' && <a href={evidencia.src} download="mapa-conceptual-semana-1.jpg" className="inline-flex size-10 items-center justify-center rounded-full hover:bg-salvia-50" aria-label="Descargar imagen">
             <Download className="size-5" aria-hidden />
-          </a>
+          </a>}
           <button type="button" onClick={cerrar} className="inline-flex size-10 items-center justify-center rounded-full hover:bg-salvia-50" aria-label="Cerrar visor">
             <X className="size-5" aria-hidden />
           </button>

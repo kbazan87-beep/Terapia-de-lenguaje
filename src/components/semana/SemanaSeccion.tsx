@@ -5,7 +5,6 @@ import type { Semana } from '../../content/tipos'
 import { apartados, type ApartadoId } from './apartados'
 import { Teoria } from './teoria/Teoria'
 import { Practica } from './Practica'
-import { Evidencias } from './evidencias/Evidencias'
 import { Reflexion } from './Reflexion'
 import { Revelar } from '../ui/Revelar'
 
@@ -30,8 +29,6 @@ export function SemanaSeccion({ semana, indice }: { semana: Semana; indice: stri
     setActivo(apartados[destino].id)
     pestanas.current[destino]?.focus()
   }
-
-  const actual = apartados.find((a) => a.id === activo)!
 
   return (
     <section id={base} aria-labelledby={`titulo-${base}`} className="py-20 md:py-28">
@@ -66,7 +63,7 @@ export function SemanaSeccion({ semana, indice }: { semana: Semana; indice: stri
 
         <div ref={ancla} className="scroll-mt-24" />
         <div role="tablist" aria-label={`Apartados de la semana ${semana.numero}`} className="sticky top-[4.6rem] z-30 -mx-4 mt-6 bg-gradient-to-b from-crema via-crema/95 to-crema/0 px-4 pt-2 pb-3 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-          <div className="relative mx-auto grid grid-cols-4 gap-1 rounded-[1.4rem] border border-linea bg-papel p-1.5 shadow-sm sm:rounded-full">
+          <div className="relative mx-auto grid grid-cols-3 gap-1 rounded-[1.4rem] border border-linea bg-papel p-1.5 shadow-sm sm:rounded-full">
             {apartados.map((a, i) => {
               const sel = a.id === activo
               const Icono = a.icono
@@ -110,9 +107,8 @@ export function SemanaSeccion({ semana, indice }: { semana: Semana; indice: stri
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 focus-visible:outline-none"
           >
-            {activo === 'teoria' && <Teoria semana={semana} acento={actual.acento} irA={ir} />}
-            {activo === 'practica' && <Practica semana={semana} acento={actual.acento} irA={ir} />}
-            {activo === 'evidencias' && <Evidencias semana={semana} />}
+            {activo === 'teoria' && <Teoria semana={semana} />}
+            {activo === 'practica' && <Practica semana={semana} />}
             {activo === 'reflexion' && <Reflexion semana={semana} />}
           </motion.div>
         </AnimatePresence>

@@ -18,19 +18,17 @@ export type Concepto = {
   cita: string
 }
 
-export type NivelAtencion = {
-  id: string
-  etiqueta: string
-  titulo: string
-  descripcion: string
-}
-
-/** Nodo del mapa conceptual. `relacion` es el conector que lo une con su nodo padre. */
+/**
+ * Nodo del mapa conceptual. `relacion` es el conector que lo une con su nodo padre.
+ * El nodo muestra solo `titulo` y `resumen`; `detalle` se lee al seleccionarlo.
+ */
 export type NodoMapa = {
   id: string
   titulo: string
-  texto?: string
+  resumen?: string
+  detalle?: string[]
   lista?: string[]
+  fuente?: string
   relacion?: string
   hijos?: NodoMapa[]
 }
@@ -91,6 +89,20 @@ export type EvidenciaTabla = {
 
 export type Evidencia = EvidenciaImagen | EvidenciaTabla
 
+export type EtapaReflexion = {
+  id: string
+  pregunta: string
+  accion: string
+  proposito: string
+  respuestas: {
+    pregunta: string
+    /** Fragmentos de mi reflexión o de mi práctica; `null` si no hay información documentada. */
+    texto: string | null
+    /** Indica cuando el texto proviene de la ficha de práctica y no de la reflexión. */
+    origen?: 'práctica'
+  }[]
+}
+
 export type Semana = {
   numero: number
   slug: string
@@ -100,9 +112,8 @@ export type Semana = {
     titulo: string
     introduccion: string
     conceptos: Concepto[]
-    niveles: { intro: string; items: NivelAtencion[]; cita: string }
     mapa: { raiz: NodoMapa; sintesis: NodoMapa; nota: string }
-    rol: { lema: string; enfoque: string; funciones: FuncionRol[] }
+    rol: { lema: string; enfoque: string; fuente: string; funciones: FuncionRol[] }
   }
   practica: {
     titulo: string
@@ -114,12 +125,11 @@ export type Semana = {
     aprendizaje: string[]
   }
   reflexion: {
-    original: string
-    aprendi: string
-    sorprendio: string
-    aplicaria: string
-    pendiente: string
+    modelo: { nombre: string; cita: string }
     destacada: string
+    /** Texto original de la reflexión, sin cambios. */
+    original: string
+    etapas: EtapaReflexion[]
   }
   evidencias: { teoria: Evidencia[]; practica: Evidencia[] }
   referencias: Referencia[]

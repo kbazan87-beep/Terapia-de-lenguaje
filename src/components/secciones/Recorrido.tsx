@@ -9,7 +9,7 @@ export function Recorrido({ semanas }: { semanas: Semana[] }) {
     <section id="recorrido" aria-labelledby="titulo-recorrido" className="bg-papel py-20 md:py-28">
       <div className="contenedor">
         <EncabezadoSeccion id="titulo-recorrido" indice="02" antetitulo="Mi recorrido de aprendizaje" titulo="Semana a semana">
-          Cada semana reúne teoría, práctica, evidencias y reflexión. Las siguientes se incorporarán a medida que avance el curso.
+          Cada semana sigue una misma secuencia: comprendo la teoría, la aplico en la práctica y reflexiono sobre lo aprendido. Las siguientes se incorporarán a medida que avance el curso.
         </EncabezadoSeccion>
 
         <ol className="relative grid gap-5 md:grid-cols-3">

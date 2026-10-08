@@ -20,7 +20,6 @@ export function RolTerapeuta({ rol }: Props) {
               type="button"
               aria-pressed={activo}
               onClick={() => setSel(f.id)}
-              onMouseEnter={() => setSel(f.id)}
               className={`group flex items-start gap-4 rounded-2xl border p-4 text-left transition ${activo ? 'border-petroleo-700 bg-petroleo-700 text-white shadow-lg' : 'border-linea bg-papel hover:border-petroleo-300'}`}
             >
               <span className={`font-display text-sm ${activo ? 'text-coral-400' : 'text-coral-700'}`}>0{i + 1}</span>
@@ -64,6 +63,7 @@ export function RolTerapeuta({ rol }: Props) {
           <span className="eyebrow mr-2 text-salvia-700">Se enfoca en</span>
           {rol.enfoque}
         </div>
+        <p className="mt-3 text-xs text-gris">Fuente: {rol.fuente}</p>
       </div>
     </div>
   )

@@ -43,99 +43,98 @@ export const semana01: Semana = {
         cita: '(OMS et al., 2012)',
       },
     ],
-    niveles: {
-      intro: 'De lo más sencillo a lo más complejo, para no dispersar los recursos.',
-      cita: 'Vignolo et al. (2011)',
-      items: [
-        {
-          id: 'comunidad',
-          etiqueta: 'APS',
-          titulo: 'Personas, familias y comunidad',
-          descripcion:
-            'La APS es la puerta de entrada al sistema de salud: debe estar al alcance de todas las personas y familias de una comunidad y cuenta con su participación.',
-        },
-        {
-          id: 'nivel-1',
-          etiqueta: 'Nivel 1',
-          titulo: 'Puestos y centros de salud',
-          descripcion:
-            'Atiende la mayoría de los problemas frecuentes y se enfoca en promoción, prevención, tamizaje y rehabilitación.',
-        },
-        {
-          id: 'nivel-2-3',
-          etiqueta: 'Niveles 2 y 3',
-          titulo: 'Hospitalización o mayor especialización',
-          descripcion: 'Reciben lo que requiere hospitalización o mayor especialización.',
-        },
-      ],
-    },
     mapa: {
-      nota: 'Mapa conceptual de elaboración propia. La versión interactiva conserva sus conceptos, relaciones y textos originales.',
+      nota: 'Elaboración propia. Versión interactiva de mi mapa conceptual, revisada con la presentación de la clase de la semana 1.',
       raiz: {
         id: 'raiz',
         titulo: 'Terapia de Lenguaje en Atención Comunitaria',
+        resumen: 'Bases teórico-conceptuales de la semana 1',
+        detalle: [
+          'Logro de aprendizaje de la sesión: explicar las bases conceptuales de la atención comunitaria y de la APS; identificar los niveles de atención, principios y características de la APS; y reconocer el rol del tecnólogo médico en Terapia de Audición, Voz y Lenguaje dentro de los programas comunitarios.',
+        ],
+        fuente: 'Presentación de clase, semana 1',
         hijos: [
           {
             id: 'conceptos-basicos',
             titulo: 'Conceptos básicos',
+            resumen: 'Salud, comunidad y atención comunitaria',
             relacion: 'se sustenta en',
             hijos: [
               {
                 id: 'salud',
                 titulo: 'Salud',
                 relacion: 'incluye',
-                texto: 'Estado de completo bienestar físico, mental y social, y no solo la ausencia de enfermedad (OMS, 1978).',
+                resumen: 'Bienestar físico, mental y social',
+                detalle: ['Estado de completo bienestar físico, mental y social, y no solo la ausencia de enfermedad (OMS, 1978).'],
+                fuente: 'Mapa conceptual y presentación de clase',
               },
               {
                 id: 'comunidad',
                 titulo: 'Comunidad',
                 relacion: 'incluye',
-                texto: 'Grupo de personas que comparten un territorio, cultura e intereses, y se organizan en torno a necesidades comunes.',
+                resumen: 'Territorio, cultura e intereses comunes',
+                detalle: ['Grupo de personas que comparten un territorio, cultura e intereses, y que se organizan en torno a necesidades comunes.'],
+                fuente: 'Mapa conceptual y presentación de clase',
               },
               {
                 id: 'atencion-comunitaria',
                 titulo: 'Atención comunitaria',
                 relacion: 'incluye',
-                texto: 'Modelo de atención centrado en la comunidad, que promueve la salud, previene la enfermedad y fomenta la participación de las personas.',
+                resumen: 'Modelo centrado en la comunidad',
+                detalle: ['Modelo de atención centrado en la comunidad, que promueve la salud, previene la enfermedad y fomenta la participación de las personas.'],
+                fuente: 'Mapa conceptual y presentación de clase',
               },
             ],
           },
           {
             id: 'aps',
             titulo: 'Atención Primaria de Salud (APS)',
+            resumen: 'Puerta de entrada al sistema de salud',
             relacion: 'se sustenta en',
+            detalle: [
+              'La atención primaria de salud es la asistencia sanitaria esencial, accesible a todos los individuos y familias de la comunidad, a través de medios aceptables para ellos, con su plena participación y a un costo asequible para la comunidad y el país.',
+              'Es el núcleo del sistema de salud del país y forma parte integral del desarrollo socioeconómico general de la comunidad (OMS, 1978).',
+            ],
+            fuente: 'Presentación de clase (Declaración de Alma-Ata, OMS, 1978)',
             hijos: [
               {
-                id: 'aps-definicion',
-                titulo: '',
-                relacion: 'es',
-                texto:
-                  'La asistencia sanitaria esencial, accesible a todos, con participación comunitaria y a un costo asequible. Es el núcleo del sistema de salud y parte del desarrollo socioeconómico de la comunidad.',
+                id: 'objetivos',
+                titulo: 'Objetivos',
+                relacion: 'persigue',
+                resumen: 'Cuatro objetivos de la APS',
+                fuente: 'Presentación de clase',
                 hijos: [
-                  {
-                    id: 'acceso',
-                    titulo: 'Acceso universal',
-                    relacion: 'se caracteriza por',
-                    texto: 'Puerta de entrada al sistema de salud para toda la población.',
-                  },
-                  {
-                    id: 'promocion',
-                    titulo: 'Promoción y prevención',
-                    relacion: 'se caracteriza por',
-                    texto: 'Prioriza la salud y previene la enfermedad y la discapacidad.',
-                  },
-                  {
-                    id: 'participacion',
-                    titulo: 'Participación comunitaria',
-                    relacion: 'se caracteriza por',
-                    texto: 'Involucra a personas, familias y organizaciones en el cuidado de la salud.',
-                  },
-                  {
-                    id: 'integralidad',
-                    titulo: 'Integralidad y continuidad',
-                    relacion: 'se caracteriza por',
-                    texto: 'Atención integral, continua y coordinada a lo largo de la vida.',
-                  },
+                  { id: 'acceso', titulo: 'Acceso universal', detalle: ['Garantizar el primer contacto y la puerta de entrada al sistema de salud para toda la población.'], fuente: 'Presentación de clase' },
+                  { id: 'promocion', titulo: 'Promoción y prevención', detalle: ['Priorizar la promoción de la salud y la prevención de la enfermedad y la discapacidad.'], fuente: 'Presentación de clase' },
+                  { id: 'participacion', titulo: 'Participación comunitaria', detalle: ['Involucrar a personas, familias y organizaciones en el cuidado de su propia salud.'], fuente: 'Presentación de clase' },
+                  { id: 'integralidad', titulo: 'Integralidad y continuidad', detalle: ['Brindar atención integral, continua y coordinada a lo largo de la vida.'], fuente: 'Presentación de clase' },
+                ],
+              },
+              {
+                id: 'principios',
+                titulo: 'Principios',
+                relacion: 'se rige por',
+                resumen: 'Esencial, pertinente, universal y participativa',
+                fuente: 'Presentación de clase',
+                hijos: [
+                  { id: 'esencial', titulo: 'Esencial', detalle: ['Aborda los problemas de salud y los riesgos que se producen con más frecuencia en una población.'], fuente: 'Presentación de clase' },
+                  { id: 'pertinente', titulo: 'Pertinente', detalle: ['Usa recursos apropiados, desde los sanitarios propiamente dichos hasta los distintos recursos de que disponga la comunidad.'], fuente: 'Presentación de clase' },
+                  { id: 'universal', titulo: 'Universal', detalle: ['Debe estar al alcance de todos los individuos y familias de la comunidad.'], fuente: 'Presentación de clase' },
+                  { id: 'participativa', titulo: 'Participativa', detalle: ['Las personas y familias asumen responsabilidad sobre su propia salud y bienestar y sobre los de su comunidad.'], fuente: 'Presentación de clase' },
+                ],
+              },
+              {
+                id: 'accesibilidad',
+                titulo: 'Característica: accesibilidad',
+                relacion: 'se caracteriza por',
+                resumen: 'Cuatro dimensiones',
+                detalle: ['Posibilidad de que la población acceda a los servicios de salud. Se expresa en cuatro dimensiones.'],
+                fuente: 'Presentación de clase',
+                hijos: [
+                  { id: 'geografica', titulo: 'Geográfica', detalle: ['Proximidad de los centros de atención al domicilio y al centro de trabajo.'], fuente: 'Presentación de clase' },
+                  { id: 'economica', titulo: 'Económica', detalle: ['Acceso a la atención al margen de la situación económica de las personas.'], fuente: 'Presentación de clase' },
+                  { id: 'cultural', titulo: 'Cultural', detalle: ['Atención acorde con las pautas de comportamiento de la población (religión, cultura, valores, costumbres).'], fuente: 'Presentación de clase' },
+                  { id: 'funcional', titulo: 'Funcional', detalle: ['Atención recibida por quienes la necesitan, en el momento en que la necesitan.'], fuente: 'Presentación de clase' },
                 ],
               },
             ],
@@ -143,27 +142,87 @@ export const semana01: Semana = {
           {
             id: 'sistema',
             titulo: 'Sistema y niveles de atención',
+            resumen: 'Organización de los recursos en salud',
             relacion: 'se sustenta en',
             hijos: [
               {
                 id: 'sistema-salud',
                 titulo: 'Sistema de salud',
                 relacion: 'se organiza en',
-                texto: 'Forma en que se organizan los recursos para la atención de la salud en el país. En el Perú lo conforman:',
+                resumen: 'MINSA, EsSalud, Sanidades y sector privado',
+                detalle: ['Forma concreta en que se organizan los recursos para la atención de la salud del país. En el Perú lo conforman:'],
                 lista: ['MINSA', 'EsSalud', 'Sanidades de las Fuerzas Armadas y Policiales', 'Sector privado'],
+                fuente: 'Mapa conceptual y presentación de clase',
+                hijos: [
+                  {
+                    id: 'niveles',
+                    titulo: 'Niveles de atención',
+                    relacion: 'define',
+                    resumen: 'Del más sencillo al más complejo',
+                    detalle: [
+                      'Conjunto de elementos interrelacionados y adaptados a distintas necesidades, que van del más sencillo al más complejo.',
+                      'Esta organización evita la dispersión de los recursos y permite el máximo grado de operatividad y de aprovechamiento de estos.',
+                    ],
+                    fuente: 'Presentación de clase (Vignolo et al., 2011)',
+                    hijos: [
+                      {
+                        id: 'nivel-1',
+                        titulo: 'Nivel 1',
+                        resumen: 'Puestos y centros de salud',
+                        detalle: [
+                          'Atiende cerca del 80% de los problemas de salud más frecuentes.',
+                          'El 60-70% debería resolverse en este nivel con participación de la comunidad.',
+                          'Promoción, prevención, tamizaje y rehabilitación; deriva el resto al 2.° nivel.',
+                        ],
+                        fuente: 'Presentación de clase (Vignolo et al., 2011)',
+                      },
+                      {
+                        id: 'nivel-2',
+                        titulo: 'Nivel 2',
+                        resumen: 'Hospitales generales',
+                        detalle: ['Acoge a pacientes que requieren hospitalización; atiende al 20-30% de la población.', 'Su fin es la curación y la recuperación de la salud.'],
+                        fuente: 'Presentación de clase (Vignolo et al., 2011)',
+                      },
+                      {
+                        id: 'nivel-3',
+                        titulo: 'Nivel 3',
+                        resumen: 'Institutos y hospitales especializados',
+                        detalle: ['Mayor grado de especialización y tecnología más compleja.'],
+                        fuente: 'Presentación de clase (Vignolo et al., 2011)',
+                      },
+                    ],
+                  },
+                ],
               },
             ],
           },
           {
             id: 'discapacidad',
             titulo: 'La discapacidad en la comunidad',
+            resumen: 'Funcionamiento, prevención y atención',
             relacion: 'se sustenta en',
+            detalle: [
+              'Desde una visión integral de la atención primaria, además del tratamiento de la enfermedad debe incorporarse la intervención sobre la discapacidad.',
+              'Por ello se propone una atención primaria orientada a la promoción del funcionamiento, la prevención de la discapacidad y la atención a la discapacidad.',
+            ],
+            fuente: 'Presentación de clase',
             hijos: [
               {
                 id: 'rbc',
                 titulo: 'Rehabilitación Basada en la Comunidad (RBC)',
                 relacion: 'se aborda mediante',
-                texto: 'Estrategia que promueve la inclusión, participación y autonomía de las personas con discapacidad en su entorno.',
+                resumen: 'Estrategia de desarrollo comunitario',
+                detalle: [
+                  'Estrategia de desarrollo comunitario (OMS/OPS) para la rehabilitación, la igualdad de oportunidades y la inclusión social de las personas con discapacidad.',
+                  'Sus procedimientos permiten que la persona con discapacidad, la comunidad y la red de servicios trabajen de forma coordinada.',
+                ],
+                fuente: 'Presentación de clase (OMS et al., 2012)',
+                hijos: [
+                  { id: 'rbc-persona', titulo: 'Persona con discapacidad', fuente: 'Presentación de clase' },
+                  { id: 'rbc-comunidad', titulo: 'Comunidad', fuente: 'Presentación de clase' },
+                  { id: 'rbc-red', titulo: 'Red de servicios de salud', fuente: 'Presentación de clase' },
+                  { id: 'rbc-comites', titulo: 'Comités comunitarios', fuente: 'Presentación de clase' },
+                ],
               },
             ],
           },
@@ -172,45 +231,43 @@ export const semana01: Semana = {
       sintesis: {
         id: 'rol',
         titulo: 'Rol del terapeuta de lenguaje en la APS',
-        hijos: [
-          {
-            id: 'rol-enfoque',
-            titulo: '',
-            relacion: 'se enfoca en',
-            texto:
-              'Promoción, prevención y trabajo comunitario, contribuyendo a la salud comunicativa y al desarrollo de la población, especialmente en comunidades con barreras de acceso a servicios especializados.',
-          },
+        resumen: 'Promoción, prevención y trabajo comunitario',
+        detalle: [
+          'Promoción, prevención y trabajo comunitario, contribuyendo a la salud comunicativa y al desarrollo de la población, especialmente en comunidades con barreras de acceso a servicios especializados.',
+          'Sus cuatro funciones se desarrollan en el apartado «Rol del terapeuta de lenguaje».',
         ],
+        fuente: 'Mapa conceptual y presentación de clase',
       },
     },
     rol: {
       lema: 'El terapeuta de lenguaje lleva la atención comunitaria a donde las personas viven y aprenden.',
       enfoque:
         'Promoción, prevención y trabajo comunitario, contribuyendo a la salud comunicativa y al desarrollo de la población, especialmente en comunidades con barreras de acceso a servicios especializados.',
+      fuente: 'Presentación de clase y ficha de teoría de la semana 1.',
       funciones: [
         {
-          id: 'promueve',
-          verbo: 'Promueve',
-          descripcion: 'el desarrollo comunicativo con familias, docentes y adultos mayores.',
-          vinculos: ['Familias', 'Docentes', 'Adultos mayores'],
+          id: 'promocion',
+          verbo: 'Promoción',
+          descripcion: 'Difunde el desarrollo comunicativo saludable y orienta a padres, cuidadores, docentes y adultos mayores.',
+          vinculos: ['Padres', 'Cuidadores', 'Docentes', 'Adultos mayores'],
         },
         {
-          id: 'tamiza',
-          verbo: 'Realiza tamizajes',
-          descripcion: 'de habla, voz, audición y lenguaje para detectar a tiempo.',
+          id: 'prevencion',
+          verbo: 'Prevención',
+          descripcion: 'Realiza tamizajes de habla, voz, audición y lenguaje para la detección temprana de dificultades.',
           vinculos: ['Habla', 'Voz', 'Audición', 'Lenguaje'],
         },
         {
-          id: 'capacita',
-          verbo: 'Capacita',
-          descripcion: 'a agentes comunitarios.',
-          vinculos: ['Agentes comunitarios'],
+          id: 'trabajo-comunitario',
+          verbo: 'Trabajo comunitario',
+          descripcion: 'Capacita agentes comunitarios y trabaja en equipos multi e interdisciplinarios dentro de la RBC.',
+          vinculos: ['Agentes comunitarios', 'Equipos multi e interdisciplinarios', 'RBC'],
         },
         {
-          id: 'articula',
-          verbo: 'Se articula',
-          descripcion: 'con programas del Estado.',
-          vinculos: ['MINSA', 'MINEDU', 'MIDIS', 'OMAPED'],
+          id: 'articulacion',
+          verbo: 'Articulación',
+          descripcion: 'Participa en programas del Estado (MINSA, MINEDU, MIDIS, OMAPED) y campañas sociales de prevención.',
+          vinculos: ['MINSA', 'MINEDU', 'MIDIS', 'OMAPED', 'Campañas sociales de prevención'],
         },
       ],
     },
@@ -243,15 +300,70 @@ export const semana01: Semana = {
   },
 
   reflexion: {
+    modelo: { nombre: 'Modelo reflexivo de Rolfe, Freshwater y Jasper', cita: '(Rolfe et al., 2001)' },
+    destacada: 'Usaría esa lista para dar una derivación concreta y no una indicación vaga.',
     original:
       'Esta semana vimos qué es la atención primaria de salud, cómo se organizan los niveles de atención y armé un directorio de lugares a los que se puede derivar a una familia. Me sorprendió que el primer nivel esté pensado para resolver la mayoría de los problemas de salud, porque yo asociaba la terapia de lenguaje casi solo con hospitales y consultorios. Esto importa porque la APS busca que la atención sea accesible en lo geográfico, lo económico y lo cultural (OMS, 1978; Vignolo et al., 2011), y al armar el directorio vi que hay servicios que existen, pero no son fáciles de encontrar por distrito. Con una familia o una escuela, usaría esa lista para dar una derivación concreta y no una indicación vaga. Me falta conocer mejor cómo funciona la referencia y contrarreferencia en la práctica.',
-    aprendi:
-      'Esta semana vimos qué es la atención primaria de salud, cómo se organizan los niveles de atención y armé un directorio de lugares a los que se puede derivar a una familia.',
-    sorprendio:
-      'Me sorprendió que el primer nivel esté pensado para resolver la mayoría de los problemas de salud, porque yo asociaba la terapia de lenguaje casi solo con hospitales y consultorios. Esto importa porque la APS busca que la atención sea accesible en lo geográfico, lo económico y lo cultural (OMS, 1978; Vignolo et al., 2011), y al armar el directorio vi que hay servicios que existen, pero no son fáciles de encontrar por distrito.',
-    aplicaria: 'Con una familia o una escuela, usaría esa lista para dar una derivación concreta y no una indicación vaga.',
-    pendiente: 'Me falta conocer mejor cómo funciona la referencia y contrarreferencia en la práctica.',
-    destacada: 'Usaría esa lista para dar una derivación concreta y no una indicación vaga.',
+    etapas: [
+      {
+        id: 'que',
+        pregunta: '¿Qué?',
+        accion: 'Describir',
+        proposito: 'Presento los hechos y aprendizajes principales de la semana.',
+        respuestas: [
+          {
+            pregunta: '¿Qué hicimos o aprendimos esta semana?',
+            texto: 'Esta semana vimos qué es la atención primaria de salud, cómo se organizan los niveles de atención y armé un directorio de lugares a los que se puede derivar a una familia.',
+          },
+          {
+            pregunta: '¿Qué me llamó la atención o me sorprendió?',
+            texto: 'Me sorprendió que el primer nivel esté pensado para resolver la mayoría de los problemas de salud.',
+          },
+        ],
+      },
+      {
+        id: 'y-que',
+        pregunta: '¿Y qué?',
+        accion: 'Analizar',
+        proposito: 'Explico por qué lo aprendido es relevante para la atención comunitaria y para mi formación.',
+        respuestas: [
+          {
+            pregunta: '¿Por qué es importante para la atención comunitaria?',
+            texto: 'Esto importa porque la APS busca que la atención sea accesible en lo geográfico, lo económico y lo cultural (OMS, 1978; Vignolo et al., 2011). Al armar el directorio vi que hay servicios que existen, pero no son fáciles de encontrar por distrito.',
+          },
+          {
+            pregunta: '¿Cómo se relaciona con la teoría o con lo que ya sabía?',
+            texto: 'Yo asociaba la terapia de lenguaje casi solo con hospitales y consultorios. Comprender que el primer nivel está pensado para resolver la mayoría de los problemas de salud cambió esa idea.',
+          },
+          {
+            pregunta: '¿Qué significa para mi formación como futura terapeuta de lenguaje?',
+            texto: 'Aprendí que reconocer a tiempo dónde derivar es parte del trabajo del terapeuta de lenguaje, porque ningún profesional ni servicio resuelve todo por sí solo.',
+            origen: 'práctica',
+          },
+        ],
+      },
+      {
+        id: 'ahora-que',
+        pregunta: '¿Ahora qué?',
+        accion: 'Proyectar',
+        proposito: 'Planteo cómo llevar lo aprendido a situaciones profesionales y cuáles son mis siguientes retos.',
+        respuestas: [
+          {
+            pregunta: '¿Cómo lo aplicaría con una familia, una escuela o una comunidad?',
+            texto: 'Con una familia o una escuela, usaría esa lista para dar una derivación concreta y no una indicación vaga.',
+          },
+          {
+            pregunta: '¿Y en un contexto comunitario real?',
+            texto: 'Usaría este directorio para actualizar la lista, ordenarla por distrito y por tipo de servicio, y compartirla con docentes, promotores y familias.',
+            origen: 'práctica',
+          },
+          {
+            pregunta: '¿Qué necesito reforzar o seguir aprendiendo?',
+            texto: 'Me falta conocer mejor cómo funciona la referencia y contrarreferencia en la práctica.',
+          },
+        ],
+      },
+    ],
   },
 
   evidencias: evidenciasSemana01,
@@ -279,6 +391,14 @@ export const semana01: Semana = {
         { texto: 'Vignolo, J., Vacarezza, M., Álvarez, C. y Sosa, A. (2011). Niveles de atención, de prevención y atención primaria de la salud. ' },
         { texto: 'Archivos de Medicina Interna, 33', cursiva: true },
         { texto: '(1), 11–14.' },
+      ],
+    },
+    {
+      id: 'rolfe-2001',
+      fragmentos: [
+        { texto: 'Rolfe, G., Freshwater, D. y Jasper, M. (2001). ' },
+        { texto: "Critical reflection for nursing and the helping professions: A user's guide", cursiva: true },
+        { texto: '. Palgrave.' },
       ],
     },
   ],

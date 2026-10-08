@@ -27,13 +27,13 @@ src/
       index.ts             ← registro de semanas
       semana-01/
         index.ts           ← teoría, práctica, reflexión y referencias
-        evidencias.ts      ← evidencias (mapa original y hojas del Excel)
+        evidencias.ts      ← evidencias: mapa original e «Instrumentos» (teoría), «Lugares de atención» (práctica)
         lugares.json       ← hoja «Lugares de atención» (extraída sin cambios)
         instrumentos.json  ← hoja «Instrumentos» (extraída sin cambios)
   components/
     layout/                ← navegación y pie
     secciones/             ← portada, sobre mí, recorrido, referencias
-    semana/                ← pestañas Teoría · Práctica · Evidencias · Reflexión
+    semana/                ← pestañas Teoría · Práctica · Reflexión (con evidencias integradas)
   assets/                  ← logo UPCH, mapa conceptual original, Excel de evidencias
 scripts/
   extraer_excel.py         ← regenera los JSON a partir del Excel

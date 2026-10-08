@@ -5,11 +5,7 @@ import { TarjetasConceptos } from './TarjetasConceptos'
 import { MapaConceptual } from './MapaConceptual'
 import { RolTerapeuta } from './RolTerapeuta'
 import { EvidenciaClase } from './bloques/EvidenciaClase'
-import { OrigenRBC } from './bloques/OrigenRBC'
-import { PrincipiosRadial } from './bloques/PrincipiosRadial'
-import { MatrizRBC } from './bloques/MatrizRBC'
-import { EjesIntervencion } from './bloques/EjesIntervencion'
-import { ContextoPeru } from './bloques/ContextoPeru'
+import { BloqueEvidencias } from '../evidencias/BloqueEvidencias'
 
 export function Bloque({ id, letra, titulo, descripcion, children }: { id: string; letra: string; titulo: string; descripcion?: string; children: ReactNode }) {
   return (
@@ -35,16 +31,8 @@ function Contenido({ bloque }: { bloque: BloqueTeoria }) {
       return <RolTerapeuta rol={bloque.rol} />
     case 'evidencia':
       return <EvidenciaClase bloque={bloque} />
-    case 'origen':
-      return <OrigenRBC bloque={bloque} />
-    case 'principios':
-      return <PrincipiosRadial bloque={bloque} />
-    case 'matriz':
-      return <MatrizRBC bloque={bloque} />
-    case 'ejes':
-      return <EjesIntervencion bloque={bloque} />
-    case 'contexto-peru':
-      return <ContextoPeru bloque={bloque} />
+    case 'evidencias':
+      return <BloqueEvidencias evidencias={bloque.evidencias} procedencia={bloque.procedencia} />
   }
 }
 

@@ -70,7 +70,7 @@ export function MapaConceptual({ mapa, original }: Props) {
         aria-pressed={activo}
         aria-controls="detalle-mapa"
         onClick={() => alternar(n.id)}
-        className={`rounded-xl px-3 py-2 text-left text-sm transition ${activo ? 'bg-coral-500 text-white' : 'bg-petroleo-50 text-petroleo-900 hover:bg-petroleo-100'} ${clases}`}
+        className={`min-w-0 rounded-xl px-3 py-2 text-left text-sm break-words hyphens-auto transition ${activo ? 'bg-coral-500 text-white' : 'bg-petroleo-50 text-petroleo-900 hover:bg-petroleo-100'} ${clases}`}
       >
         <span className="block font-medium">{n.titulo}</span>
         {n.resumen && <span className={`block text-xs ${activo ? 'text-white/85' : 'text-gris'}`}>{n.resumen}</span>}
@@ -126,8 +126,15 @@ export function MapaConceptual({ mapa, original }: Props) {
   /** Rama completa: nodo, relación e hijos; los nietos se muestran como fichas. */
   const rama = (r: NodoMapa) => (
     <div key={r.id} className="flex min-w-0 flex-col rounded-3xl border border-dashed border-petroleo-100 bg-white/60 p-3">
+      {ramasDistintas && conector(r.relacion)}
       {nodo(r, 'rama')}
-      {r.hijos?.map((h) => (
+      {r.compacto && r.hijos && (
+        <>
+          {conector(r.hijos[0].relacion)}
+          <div className="grid grid-cols-2 gap-1.5 xl:grid-cols-1">{r.hijos.map(ficha)}</div>
+        </>
+      )}
+      {!r.compacto && r.hijos?.map((h) => (
         <div key={h.id}>
           {conector(h.relacion)}
           {nodo(h, 'hoja')}
@@ -153,6 +160,8 @@ export function MapaConceptual({ mapa, original }: Props) {
   )
 
   const ramas = mapa.raiz.hijos ?? []
+  // Si cada rama tiene su propio conector, se muestra sobre la rama y no en la raíz.
+  const ramasDistintas = new Set(ramas.map((r) => r.relacion)).size > 1
 
   return (
     <div>
@@ -160,7 +169,7 @@ export function MapaConceptual({ mapa, original }: Props) {
         {nodo(mapa.raiz, 'raiz')}
         {detalle({ ...mapa.raiz, hijos: [] })}
       </div>
-      {conector(ramas[0]?.relacion)}
+      {conector(ramasDistintas ? undefined : ramas[0]?.relacion)}
 
       <div className="grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-4">{ramas.map(rama)}</div>
 

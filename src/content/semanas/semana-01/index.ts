@@ -331,6 +331,14 @@ export const semana01: Semana = {
           ],
         },
       },
+      {
+        id: 'instrumentos',
+        tipo: 'evidencias',
+        titulo: 'Evidencia de la clase teórica',
+        descripcion: 'Hoja «Instrumentos» del Excel de evidencias.',
+        procedencia: 'Evidencia de teoría',
+        evidencias: evidenciasSemana01.teoria.filter((e) => e.tipo === 'tabla'),
+      },
     ],
   },
 

@@ -30,6 +30,8 @@ export type NodoMapa = {
   lista?: string[]
   fuente?: string
   relacion?: string
+  /** En una rama: muestra sus hijos directamente como fichas compactas. */
+  compacto?: boolean
   hijos?: NodoMapa[]
 }
 
@@ -112,23 +114,7 @@ export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } 
   | { tipo: 'mapa'; mapa: { raiz: NodoMapa; sintesis: NodoMapa; nota: string }; original?: EvidenciaImagen }
   | { tipo: 'rol'; rol: { lema: string; enfoque: string; etiquetaEnfoque?: string; fuente: string; funciones: FuncionRol[] } }
   | { tipo: 'evidencia'; evidencia: EvidenciaImagen; contexto: { pregunta: string; texto: string } }
-  | {
-      tipo: 'origen'
-      definicion: string
-      pasos: { etiqueta: string; titulo: string; texto: string }[]
-      peru: { marco: string; actores: string[]; rol: string }
-      fuente: string
-    }
-  | { tipo: 'principios'; centro: string; principios: { titulo: string; texto: string }[]; fuente: string }
-  | { tipo: 'matriz'; componentes: { titulo: string; areas: string[] }[]; referencia: string; nota: string }
-  | { tipo: 'ejes'; ejes: { titulo: string; acciones: string[] }[]; fuente: string }
-  | {
-      tipo: 'contexto-peru'
-      estrategias: { titulo: string; texto: string }[]
-      retos: string[]
-      normativa: { titulo: string; principios: { letra: string; texto: string }[]; cita: string; ley: string }
-      cierre: string
-    }
+  | { tipo: 'evidencias'; evidencias: Evidencia[]; procedencia: string }
 )
 
 export type EtapaReflexion = {

@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --color-crema: #faf7f2;
+  --color-papel: #fffdf9;
+  --color-tinta: #1b2a2f;
+  --color-gris: #55666b;
+  --color-linea: #e6e0d6;
+
+  --color-petroleo-50: #e8f0f1;
+  --color-petroleo-100: #cfe0e3;
+  --color-petroleo-300: #7fa4ab;
+  --color-petroleo-500: #2f6a76;
+  --color-petroleo-700: #1f4e5a;
+  --color-petroleo-900: #12323a;
+
+  --color-salvia-50: #eff4ee;
+  --color-salvia-100: #dde8db;
+  --color-salvia-300: #a9c0a6;
+  --color-salvia-500: #7c9a7a;
+  --color-salvia-700: #4b6a4d;
+
+  --color-lavanda-50: #f3f0fa;
+  --color-lavanda-100: #e5dff4;
+  --color-lavanda-300: #bcb0e0;
+  --color-lavanda-500: #8b7cc2;
+  --color-lavanda-700: #5a4b94;
+
+  --color-coral-50: #fdeee9;
+  --color-coral-100: #fadace;
+  --color-coral-400: #ec8a72;
+  --color-coral-500: #e5694f;
+  --color-coral-700: #a9412c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-crema font-sans text-tinta antialiased;
+  }
+  ::selection {
+    @apply bg-lavanda-100 text-tinta;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-coral-500;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .contenedor {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.18em] uppercase;
+  }
+  .tarjeta {
+    @apply rounded-3xl border border-linea bg-papel;
+  }
+}
+
+@keyframes onda {
+  0%, 100% { transform: scaleY(0.55); }
+  50% { transform: scaleY(1); }
+}
+.barra-onda {
+  transform-origin: center;
+  animation: onda 2.8s ease-in-out infinite;
+}

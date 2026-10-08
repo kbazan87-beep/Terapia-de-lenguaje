@@ -1,0 +1,5 @@
+import type { Semana } from '../tipos'
+import { semana01 } from './semana-01'
+
+/** Registro de semanas. Para incorporar una nueva, crea `semana-0N/` y agrégala aquí. */
+export const semanas: Semana[] = [semana01]

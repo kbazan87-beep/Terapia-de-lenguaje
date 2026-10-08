@@ -3,6 +3,7 @@ import type { Evidencia } from '../../../content/tipos'
 import { Revelar } from '../../ui/Revelar'
 import { TablaEvidencia } from './TablaEvidencia'
 import { TarjetaImagen } from './TarjetaImagen'
+import { FichaTematica } from './FichaTematica'
 
 /** Evidencias integradas en un apartado (Teoría o Práctica), con su etiqueta de procedencia. */
 export function BloqueEvidencias({ evidencias, procedencia }: { evidencias: Evidencia[]; procedencia: string }) {
@@ -21,7 +22,7 @@ export function BloqueEvidencias({ evidencias, procedencia }: { evidencias: Evid
                 <h4 className="mt-1 font-display text-xl font-semibold text-petroleo-900">{e.titulo}</h4>
                 <p className="mt-1 max-w-3xl text-gris">{e.descripcion}</p>
               </div>
-              <TablaEvidencia evidencia={e} />
+              {e.tipo === 'tabla' ? <TablaEvidencia evidencia={e} /> : <FichaTematica evidencia={e} />}
             </div>
           )}
         </Revelar>

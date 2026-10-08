@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { ImageIcon, X } from 'lucide-react'
-import type { EvidenciaImagen, NodoMapa, Semana } from '../../../content/tipos'
+import type { BloqueTeoria, EvidenciaImagen, NodoMapa } from '../../../content/tipos'
 import { VisorImagen } from '../evidencias/VisorImagen'
 
-type Props = { mapa: Semana['teoria']['mapa']; original?: EvidenciaImagen }
+type Props = { mapa: Extract<BloqueTeoria, { tipo: 'mapa' }>['mapa']; original?: EvidenciaImagen }
 
 /** Cadena de nodos desde la raíz hasta cada nodo, para leer la proposición completa. */
 function rutas(raiz: NodoMapa, mapa = new Map<string, NodoMapa[]>(), camino: NodoMapa[] = []) {

@@ -1,7 +1,7 @@
-import type { ColumnaTabla, Evidencia, FilaTabla } from '../../tipos'
+import type { ColumnaTabla, Evidencia, EvidenciaImagen, FilaTabla } from '../../tipos'
 import lugares from './lugares.json'
 import instrumentos from './instrumentos.json'
-import mapaOriginal from '../../../assets/mapa-conceptual-semana-1-original.jpg'
+import mapaSrc from '../../../assets/mapa-conceptual-semana-1-original.jpg'
 import excel from '../../../assets/evidencias-semana-1.xlsx?url'
 
 type Celdas = (string | null)[]
@@ -45,17 +45,20 @@ const filasInstrumentos: FilaTabla[] = registrosInstrumentos.map((celdas) => ({
   destacada: esMia(celdas[8]),
 }))
 
+/** Mapa conceptual original de la clase teórica (elaboración propia). */
+export const mapaOriginal: EvidenciaImagen = {
+  tipo: 'imagen',
+  id: 'mapa-original',
+  titulo: 'Mapa conceptual de la clase teórica',
+  descripcion: 'Síntesis visual de la clase 1: conceptos básicos, APS, sistema y niveles de atención, discapacidad en la comunidad y rol del terapeuta de lenguaje.',
+  autoria: 'Elaboración propia',
+  src: mapaSrc,
+  alt: 'Mapa conceptual «Terapia de Lenguaje en Atención Comunitaria», que se sustenta en conceptos básicos, Atención Primaria de Salud, sistema y niveles de atención y la discapacidad en la comunidad, y que converge en el rol del terapeuta de lenguaje en la APS.',
+}
+
 export const evidenciasSemana01: { teoria: Evidencia[]; practica: Evidencia[] } = {
   teoria: [
-    {
-      tipo: 'imagen',
-      id: 'mapa-original',
-      titulo: 'Mapa conceptual de la clase teórica',
-      descripcion: 'Síntesis visual de la clase 1: conceptos básicos, APS, sistema y niveles de atención, discapacidad en la comunidad y rol del terapeuta de lenguaje.',
-      autoria: 'Elaboración propia',
-      src: mapaOriginal,
-      alt: 'Mapa conceptual «Terapia de Lenguaje en Atención Comunitaria», que se sustenta en conceptos básicos, Atención Primaria de Salud, sistema y niveles de atención y la discapacidad en la comunidad, y que converge en el rol del terapeuta de lenguaje en la APS.',
-    },
+    mapaOriginal,
     {
       tipo: 'tabla',
       id: 'instrumentos',

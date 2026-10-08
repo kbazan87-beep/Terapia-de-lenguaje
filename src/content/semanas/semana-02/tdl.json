@@ -1,0 +1,161 @@
+{
+ "hoja": "TDL",
+ "definicion": "El trastorno del desarrollo del lenguaje es una condición en la que se encuentran comprometidas la adquisición y desarrollo del lenguaje oral, siendo detectado, generalmente, a partir de los 4 años. Además, las personas con TEL/TDL presentan, severas y persistentes complicaciones en los distintos planos del lenguaje (expresivo y comprensivo), las cuales no se encuentran asociadas con alguna condición médica de tipo neurológica, intelectual y/o sensorial.",
+ "caracteristicas": "Entre sus principales características se encuentran, por ejemplo, el retraso en la adquisición del habla, limitado conocimiento léxico-semántico y fallas constantes en la concordancia de género, número y/o tiempos verbales al construir sus oraciones.",
+ "actividades": [
+  {
+   "titulo": "Gancho motivador con lámina ilustrativa",
+   "descripcion": "El terapeuta muestra una lámina grande con una escena divertida, como un niño jugando con sus mascotas, y hace preguntas muy cortas como \"¿Qué ves?\" o \"¿Qué hacen?\", usando un tono amable y repitiendo si es necesario. El paciente responde con palabras o frases cortas apoyándose en la imagen. Esta actividad ayuda a captar la atención, reducir la ansiedad ante la comunicación oral y fomentar la expresión de vocabulario cotidiano con un apoyo concreto."
+  },
+  {
+   "titulo": "Secuencia de 3 imágenes",
+   "descripcion": "El terapeuta presenta 3 imágenes que muestran una acción cotidiana, como preparar un sándwich, y pregunta \"¿Qué pasó primero?\" y \"¿Y después?\", guiando con gestos y señalando las imágenes. El paciente observa, señala y responde con apoyo. Ayuda a conectar nuevos aprendizajes con experiencias conocidas, activando la memoria y trabajando la comprensión de orden temporal."
+  },
+  {
+   "titulo": "Comprensión y ordenamiento de secuencia de 4 imágenes",
+   "descripcion": "El terapeuta muestra 4 imágenes de una historia, como una niña que se levanta, se viste, desayuna y va a la escuela, y da instrucciones como \"Pon primero la imagen donde se levanta\". Luego pregunta \"¿Quién está aquí?\" o \"¿Qué hace?\". El paciente ordena, responde y narra la historia con apoyo de tarjetas de vocabulario. Favorece la comprensión de instrucciones, la identificación de acciones y la estructuración de oraciones simples."
+  },
+  {
+   "titulo": "Juego de asociación de palabras e imágenes con pictogramas",
+   "descripcion": "El terapeuta usa tarjetas con pictogramas y palabras como \"perro\", \"casa\", \"correr\", y pide al paciente que una cada imagen con su palabra correspondiente, reforzando positivamente cada intento. Ayuda a ampliar el vocabulario funcional y a fortalecer la relación entre palabra, imagen y significado, incentivando la participación con refuerzo positivo."
+  },
+  {
+   "titulo": "Uso de organizadores gráficos para ordenar ideas",
+   "descripcion": "El terapeuta entrega una plantilla con espacios y pide al paciente que pegue o dibuje las imágenes de la historia en orden y escriba palabras clave como \"primero\", \"después\" o \"al final\". Luego le pregunta \"¿Qué pasó primero?\" para que exprese oralmente la secuencia. Proporciona una representación visual del pensamiento, facilitando la organización de conceptos y reduciendo la carga de memoria."
+  },
+  {
+   "titulo": "Juego de memoria con tarjetas de vocabulario",
+   "descripcion": "El terapeuta coloca tarjetas boca abajo con imágenes y palabras como \"sol\", \"agua\", \"comer\", y el paciente debe encontrar los pares. Al encontrar cada pareja, debe nombrar la palabra y formar una oración como \"El sol brilla\". Entrena la memoria visual y auditiva, refuerza el reconocimiento de palabras y practica la sintaxis y concordancia."
+  },
+  {
+   "titulo": "Organizador gráfico con dibujos propios",
+   "descripcion": "El terapeuta pide al paciente que dibuje su propia rutina matutina en un organizador, por ejemplo, dibujarse despertando, cepillándose y desayunando. Luego el paciente escribe o dicta palabras clave y expresa oralmente lo que dibujó. Promueve la autonomía y la creatividad, fortaleciendo la conexión entre pensamiento, imagen y lenguaje."
+  },
+  {
+   "titulo": "Compartir la historia con el grupo",
+   "descripcion": "El paciente comparte su historia con el grupo o con el terapeuta, diciendo por ejemplo \"Primero me despierto, luego desayuno\". Mejora la autoestima y las habilidades pragmáticas como respetar turnos y escuchar."
+  },
+  {
+   "titulo": "Secuencia con relación causa-efecto",
+   "descripcion": "El terapeuta presenta 4 imágenes como un niño que corre, tropieza, se cae y llora, y pregunta \"¿Por qué se cayó?\", \"¿Qué pasó después?\". El paciente ordena y responde. Desarrolla el pensamiento lógico y la comprensión de relaciones temporales y causales, enriqueciendo la complejidad de sus narraciones."
+  },
+  {
+   "titulo": "Observación y preguntas sobre escena cotidiana",
+   "descripcion": "El terapeuta muestra una imagen de una familia en la cocina y pregunta \"¿Quién aparece?\", \"¿Dónde están?\", \"¿Qué están haciendo?\". Luego repasa actividades previas con apoyos visuales. Estimula la comprensión literal y la capacidad de observación, trabajando la extracción de información explícita."
+  },
+  {
+   "titulo": "Juego de roles o dramatización",
+   "descripcion": "El terapeuta usa títeres o disfraces y representa una historia breve, por ejemplo, un oso que busca miel, y el paciente participa actuando al oso y diciendo \"Yo soy el oso, quiero miel\". Permite practicar el lenguaje en un contexto lúdico y sin presión, mejorando la fluidez y la expresividad de manera natural."
+  }
+ ],
+ "celdas": [
+  {
+   "ref": "A1",
+   "valor": "Definición:"
+  },
+  {
+   "ref": "B1",
+   "valor": "El trastorno del desarrollo del lenguaje es una condición en la que se encuentran comprometidas la adquisición y desarrollo del lenguaje oral, siendo detectado, generalmente, a partir de los 4 años. Además, las personas con TEL/TDL presentan, severas y persistentes complicaciones en los distintos planos del lenguaje (expresivo y comprensivo), las cuales no se encuentran asociadas con alguna condición médica de tipo neurológica, intelectual y/o sensorial. "
+  },
+  {
+   "ref": "A2",
+   "valor": "Características:"
+  },
+  {
+   "ref": "B2",
+   "valor": "Entre sus principales características se encuentran, por ejemplo, el retraso en la adquisición del habla, limitado conocimiento léxico-semántico y fallas constantes en la concordancia de género, número y/o tiempos verbales al construir sus oraciones."
+  },
+  {
+   "ref": "A3",
+   "valor": "Actividades:"
+  },
+  {
+   "ref": "A4",
+   "valor": "Gancho motivador con lámina ilustrativa"
+  },
+  {
+   "ref": "B5",
+   "valor": "El terapeuta muestra una lámina grande con una escena divertida, como un niño jugando con sus mascotas, y hace preguntas muy cortas como \"¿Qué ves?\" o \"¿Qué hacen?\", usando un tono amable y repitiendo si es necesario. El paciente responde con palabras o frases cortas apoyándose en la imagen. Esta actividad ayuda a captar la atención, reducir la ansiedad ante la comunicación oral y fomentar la expresión de vocabulario cotidiano con un apoyo concreto."
+  },
+  {
+   "ref": "A7",
+   "valor": "Secuencia de 3 imágenes"
+  },
+  {
+   "ref": "B8",
+   "valor": "El terapeuta presenta 3 imágenes que muestran una acción cotidiana, como preparar un sándwich, y pregunta \"¿Qué pasó primero?\" y \"¿Y después?\", guiando con gestos y señalando las imágenes. El paciente observa, señala y responde con apoyo. Ayuda a conectar nuevos aprendizajes con experiencias conocidas, activando la memoria y trabajando la comprensión de orden temporal."
+  },
+  {
+   "ref": "A10",
+   "valor": "Comprensión y ordenamiento de secuencia de 4 imágenes"
+  },
+  {
+   "ref": "B11",
+   "valor": "El terapeuta muestra 4 imágenes de una historia, como una niña que se levanta, se viste, desayuna y va a la escuela, y da instrucciones como \"Pon primero la imagen donde se levanta\". Luego pregunta \"¿Quién está aquí?\" o \"¿Qué hace?\". El paciente ordena, responde y narra la historia con apoyo de tarjetas de vocabulario. Favorece la comprensión de instrucciones, la identificación de acciones y la estructuración de oraciones simples."
+  },
+  {
+   "ref": "A13",
+   "valor": "Juego de asociación de palabras e imágenes con pictogramas"
+  },
+  {
+   "ref": "B14",
+   "valor": "El terapeuta usa tarjetas con pictogramas y palabras como \"perro\", \"casa\", \"correr\", y pide al paciente que una cada imagen con su palabra correspondiente, reforzando positivamente cada intento. Ayuda a ampliar el vocabulario funcional y a fortalecer la relación entre palabra, imagen y significado, incentivando la participación con refuerzo positivo."
+  },
+  {
+   "ref": "A16",
+   "valor": "Uso de organizadores gráficos para ordenar ideas"
+  },
+  {
+   "ref": "B17",
+   "valor": "El terapeuta entrega una plantilla con espacios y pide al paciente que pegue o dibuje las imágenes de la historia en orden y escriba palabras clave como \"primero\", \"después\" o \"al final\". Luego le pregunta \"¿Qué pasó primero?\" para que exprese oralmente la secuencia. Proporciona una representación visual del pensamiento, facilitando la organización de conceptos y reduciendo la carga de memoria."
+  },
+  {
+   "ref": "A19",
+   "valor": "Juego de memoria con tarjetas de vocabulario"
+  },
+  {
+   "ref": "B20",
+   "valor": "El terapeuta coloca tarjetas boca abajo con imágenes y palabras como \"sol\", \"agua\", \"comer\", y el paciente debe encontrar los pares. Al encontrar cada pareja, debe nombrar la palabra y formar una oración como \"El sol brilla\". Entrena la memoria visual y auditiva, refuerza el reconocimiento de palabras y practica la sintaxis y concordancia."
+  },
+  {
+   "ref": "A22",
+   "valor": "Organizador gráfico con dibujos propios"
+  },
+  {
+   "ref": "B23",
+   "valor": "El terapeuta pide al paciente que dibuje su propia rutina matutina en un organizador, por ejemplo, dibujarse despertando, cepillándose y desayunando. Luego el paciente escribe o dicta palabras clave y expresa oralmente lo que dibujó. Promueve la autonomía y la creatividad, fortaleciendo la conexión entre pensamiento, imagen y lenguaje."
+  },
+  {
+   "ref": "A25",
+   "valor": "Compartir la historia con el grupo"
+  },
+  {
+   "ref": "A26",
+   "valor": "El paciente comparte su historia con el grupo o con el terapeuta, diciendo por ejemplo \"Primero me despierto, luego desayuno\". Mejora la autoestima y las habilidades pragmáticas como respetar turnos y escuchar."
+  },
+  {
+   "ref": "A28",
+   "valor": "Secuencia con relación causa-efecto"
+  },
+  {
+   "ref": "A29",
+   "valor": "El terapeuta presenta 4 imágenes como un niño que corre, tropieza, se cae y llora, y pregunta \"¿Por qué se cayó?\", \"¿Qué pasó después?\". El paciente ordena y responde. Desarrolla el pensamiento lógico y la comprensión de relaciones temporales y causales, enriqueciendo la complejidad de sus narraciones."
+  },
+  {
+   "ref": "A31",
+   "valor": "Observación y preguntas sobre escena cotidiana"
+  },
+  {
+   "ref": "A32",
+   "valor": "El terapeuta muestra una imagen de una familia en la cocina y pregunta \"¿Quién aparece?\", \"¿Dónde están?\", \"¿Qué están haciendo?\". Luego repasa actividades previas con apoyos visuales. Estimula la comprensión literal y la capacidad de observación, trabajando la extracción de información explícita."
+  },
+  {
+   "ref": "A34",
+   "valor": "Juego de roles o dramatización"
+  },
+  {
+   "ref": "A35",
+   "valor": "El terapeuta usa títeres o disfraces y representa una historia breve, por ejemplo, un oso que busca miel, y el paciente participa actuando al oso y diciendo \"Yo soy el oso, quiero miel\". Permite practicar el lenguaje en un contexto lúdico y sin presión, mejorando la fluidez y la expresividad de manera natural."
+  }
+ ]
+}

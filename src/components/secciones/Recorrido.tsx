@@ -66,7 +66,7 @@ export function Recorrido({ semanas }: { semanas: Semana[] }) {
             </Revelar>
           ))}
           {pendientes.length > 0 && (
-            <Revelar retraso={0.12} className="md:col-span-2">
+            <Revelar retraso={0.12} className={['md:col-span-3', 'md:col-span-2', 'md:col-span-1'][semanas.length % 3]}>
               <div className="flex h-full flex-col justify-center rounded-3xl border border-dashed border-petroleo-300 p-6 text-gris">
                 <p className="eyebrow text-petroleo-500">
                   Semanas {pendientes[0]} a {pendientes.at(-1)}

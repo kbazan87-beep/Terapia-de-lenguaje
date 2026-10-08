@@ -7,7 +7,7 @@ import { Revelar } from '../ui/Revelar'
 export function Practica({ semana }: { semana: Semana }) {
   const p = semana.practica
   const sesion = semana.sesiones.find((s) => s.tipo === 'Práctica')
-  const directorio = `${semana.slug}-practica-directorio`
+  const directorio = `${semana.slug}-practica-evidencia`
   const tablaDirectorio = semana.evidencias.practica.find((e): e is EvidenciaTabla => e.tipo === 'tabla' && e.columnaGrupo !== undefined)
 
   return (
@@ -36,7 +36,7 @@ export function Practica({ semana }: { semana: Semana }) {
         <Revelar retraso={0.06} className="tarjeta p-7 lg:col-span-7">
           <Paso n={2} icono={<FileSpreadsheet className="size-5" aria-hidden />} titulo="¿Qué hice?" />
           <p className="mt-4 leading-relaxed text-tinta">{p.actividad}</p>
-          <p className="eyebrow mt-6 text-gris">Tipos de servicio del directorio</p>
+          <p className="eyebrow mt-6 text-gris">{p.etiquetaCategorias}</p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {p.categorias.map((c) => (
               <li key={c} className="rounded-full border border-salvia-100 bg-salvia-50/60 px-3 py-1.5 text-sm text-salvia-700">{c}</li>
@@ -51,7 +51,7 @@ export function Practica({ semana }: { semana: Semana }) {
             <p className="mt-4 font-display text-xl leading-snug">{p.producto}</p>
           </div>
           <a href={`#${directorio}`} className="group inline-flex items-center justify-between gap-3 rounded-full bg-white px-5 py-3 text-sm font-semibold text-petroleo-900 hover:bg-coral-50">
-            Consultar el directorio <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />
+            {p.evidencia.boton} <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />
           </a>
         </Revelar>
 
@@ -68,8 +68,8 @@ export function Practica({ semana }: { semana: Semana }) {
 
       <section id={directorio} aria-labelledby={`${directorio}-titulo`} className="scroll-mt-40 pt-10">
         <Revelar className="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-linea pt-10">
-          <h3 id={`${directorio}-titulo`} className="font-display text-2xl font-semibold text-petroleo-900 sm:text-3xl">Directorio de lugares de atención</h3>
-          <p className="w-full text-gris sm:w-auto sm:flex-1 sm:text-right">Evidencia principal de la práctica. Busca por institución o distrito y filtra por cono.</p>
+          <h3 id={`${directorio}-titulo`} className="font-display text-2xl font-semibold text-petroleo-900 sm:text-3xl">{p.evidencia.titulo}</h3>
+          <p className="w-full text-gris sm:w-auto sm:flex-1 sm:text-right">{p.evidencia.descripcion}</p>
         </Revelar>
         {tablaDirectorio && (
           <Revelar className="mb-10">

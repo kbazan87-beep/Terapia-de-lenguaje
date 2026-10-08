@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import type { Semana } from '../../../content/tipos'
+import type { BloqueTeoria } from '../../../content/tipos'
 
-type Props = { rol: Semana['teoria']['rol'] }
+type Props = { rol: Extract<BloqueTeoria, { tipo: 'rol' }>['rol'] }
 
 export function RolTerapeuta({ rol }: Props) {
   const [sel, setSel] = useState(rol.funciones[0].id)
@@ -60,7 +60,7 @@ export function RolTerapeuta({ rol }: Props) {
         </p>
 
         <div className="mt-7 rounded-2xl bg-white/80 p-4 text-sm leading-relaxed text-tinta ring-1 ring-salvia-100">
-          <span className="eyebrow mr-2 text-salvia-700">Se enfoca en</span>
+          <span className="eyebrow mr-2 text-salvia-700">{rol.etiquetaEnfoque ?? 'Se enfoca en'}</span>
           {rol.enfoque}
         </div>
         <p className="mt-3 text-xs text-gris">Fuente: {rol.fuente}</p>

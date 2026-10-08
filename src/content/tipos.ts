@@ -87,7 +87,49 @@ export type EvidenciaTabla = {
   archivo?: { href: string; nombre: string }
 }
 
-export type Evidencia = EvidenciaImagen | EvidenciaTabla
+/** Ficha temática elaborada en Excel (definición, características y actividades). */
+export type EvidenciaFicha = {
+  tipo: 'ficha'
+  id: string
+  titulo: string
+  tema: string
+  descripcion: string
+  fuente: string
+  definicion: string
+  caracteristicas: string
+  /** Rasgos enumerados en el texto de características (mismas palabras del original). */
+  rasgos: string[]
+  actividades: { titulo: string; descripcion: string }[]
+  /** Celdas originales de la hoja, para consultar la evidencia tal como fue registrada. */
+  celdas: { ref: string; valor: string }[]
+}
+
+export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha
+
+/** Bloques de contenido teórico. Cada semana combina los que necesita su tema. */
+export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } & (
+  | { tipo: 'conceptos'; conceptos: Concepto[] }
+  | { tipo: 'mapa'; mapa: { raiz: NodoMapa; sintesis: NodoMapa; nota: string }; original?: EvidenciaImagen }
+  | { tipo: 'rol'; rol: { lema: string; enfoque: string; etiquetaEnfoque?: string; fuente: string; funciones: FuncionRol[] } }
+  | { tipo: 'evidencia'; evidencia: EvidenciaImagen; contexto: { pregunta: string; texto: string } }
+  | {
+      tipo: 'origen'
+      definicion: string
+      pasos: { etiqueta: string; titulo: string; texto: string }[]
+      peru: { marco: string; actores: string[]; rol: string }
+      fuente: string
+    }
+  | { tipo: 'principios'; centro: string; principios: { titulo: string; texto: string }[]; fuente: string }
+  | { tipo: 'matriz'; componentes: { titulo: string; areas: string[] }[]; referencia: string; nota: string }
+  | { tipo: 'ejes'; ejes: { titulo: string; acciones: string[] }[]; fuente: string }
+  | {
+      tipo: 'contexto-peru'
+      estrategias: { titulo: string; texto: string }[]
+      retos: string[]
+      normativa: { titulo: string; principios: { letra: string; texto: string }[]; cita: string; ley: string }
+      cierre: string
+    }
+)
 
 export type EtapaReflexion = {
   id: string
@@ -111,18 +153,18 @@ export type Semana = {
   teoria: {
     titulo: string
     introduccion: string
-    conceptos: Concepto[]
-    mapa: { raiz: NodoMapa; sintesis: NodoMapa; nota: string }
-    rol: { lema: string; enfoque: string; fuente: string; funciones: FuncionRol[] }
+    bloques: BloqueTeoria[]
   }
   practica: {
     titulo: string
     proposito: string
     actividad: string
+    etiquetaCategorias: string
     categorias: string[]
     modalidad: string
     producto: string
     aprendizaje: string[]
+    evidencia: { titulo: string; descripcion: string; boton: string }
   }
   reflexion: {
     modelo: { nombre: string; cita: string }

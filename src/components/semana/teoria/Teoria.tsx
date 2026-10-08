@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react'
-import { FolderOpen } from 'lucide-react'
 import type { Semana } from '../../../content/tipos'
 import { Revelar } from '../../ui/Revelar'
-import { BloqueEvidencias } from '../evidencias/BloqueEvidencias'
 import { TarjetasConceptos } from './TarjetasConceptos'
 import { MapaConceptual } from './MapaConceptual'
 import { RolTerapeuta } from './RolTerapeuta'
@@ -33,9 +31,6 @@ export function Teoria({ semana }: { semana: Semana }) {
           <p className="mt-2 font-display text-2xl text-petroleo-900 sm:text-3xl">{t.titulo}</p>
           <p className="mt-1 text-gris">{t.introduccion}</p>
         </div>
-        <a href={`#${base}-evidencias`} className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-petroleo-300 bg-white px-4 py-2 text-sm font-semibold text-petroleo-700 hover:bg-petroleo-700 hover:text-white sm:self-auto">
-          <FolderOpen className="size-4" aria-hidden /> Ir a las evidencias de la teoría
-        </a>
       </Revelar>
 
       <Bloque id={`${base}-conceptos`} letra="A" titulo="Conceptos clave" descripcion="Abre cada tarjeta para leer la definición completa.">
@@ -48,10 +43,6 @@ export function Teoria({ semana }: { semana: Semana }) {
 
       <Bloque id={`${base}-rol`} letra="C" titulo="Rol del terapeuta de lenguaje" descripcion="Elige una función para ver con quién y en qué se articula.">
         <RolTerapeuta rol={t.rol} />
-      </Bloque>
-
-      <Bloque id={`${base}-evidencias`} letra="D" titulo="Evidencias de la clase teórica" descripcion="Trabajo elaborado para la clase del 19 de agosto.">
-        <BloqueEvidencias evidencias={semana.evidencias.teoria} procedencia="Evidencia de teoría" />
       </Bloque>
     </div>
   )

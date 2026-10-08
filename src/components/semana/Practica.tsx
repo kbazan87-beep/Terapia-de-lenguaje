@@ -1,12 +1,14 @@
 import { ArrowRight, Compass, FileSpreadsheet, Lightbulb, MapPin, Route, Users } from 'lucide-react'
-import type { Semana } from '../../content/tipos'
+import type { EvidenciaTabla, Semana } from '../../content/tipos'
 import { BloqueEvidencias } from './evidencias/BloqueEvidencias'
+import { EsquemaConos } from './EsquemaConos'
 import { Revelar } from '../ui/Revelar'
 
 export function Practica({ semana }: { semana: Semana }) {
   const p = semana.practica
   const sesion = semana.sesiones.find((s) => s.tipo === 'Práctica')
   const directorio = `${semana.slug}-practica-directorio`
+  const tablaDirectorio = semana.evidencias.practica.find((e): e is EvidenciaTabla => e.tipo === 'tabla' && e.columnaGrupo !== undefined)
 
   return (
     <div className="space-y-6">
@@ -32,7 +34,7 @@ export function Practica({ semana }: { semana: Semana }) {
 
         {/* 2. Actividad realizada */}
         <Revelar retraso={0.06} className="tarjeta p-7 lg:col-span-7">
-          <Paso n={2} icono={<FileSpreadsheet className="size-5" aria-hidden />} titulo="Actividad realizada" />
+          <Paso n={2} icono={<FileSpreadsheet className="size-5" aria-hidden />} titulo="¿Qué hice?" />
           <p className="mt-4 leading-relaxed text-tinta">{p.actividad}</p>
           <p className="eyebrow mt-6 text-gris">Tipos de servicio del directorio</p>
           <ul className="mt-3 flex flex-wrap gap-2">
@@ -55,7 +57,7 @@ export function Practica({ semana }: { semana: Semana }) {
 
         {/* 4. Aprendizaje y aplicación comunitaria */}
         <Revelar retraso={0.14} className="tarjeta p-7 lg:col-span-8">
-          <Paso n={4} icono={<Lightbulb className="size-5" aria-hidden />} titulo="Aprendizaje y aplicación comunitaria" />
+          <Paso n={4} icono={<Lightbulb className="size-5" aria-hidden />} titulo="Aprendizaje y aplicación comunitaria (Aporte)" />
           <div className="mt-4 grid gap-5 md:grid-cols-2">
             {p.aprendizaje.map((t, i) => (
               <p key={i} className={`leading-relaxed ${i === 0 ? 'text-tinta' : 'border-l-2 border-salvia-300 pl-4 text-tinta'}`}>{t}</p>
@@ -69,6 +71,11 @@ export function Practica({ semana }: { semana: Semana }) {
           <h3 id={`${directorio}-titulo`} className="font-display text-2xl font-semibold text-petroleo-900 sm:text-3xl">Directorio de lugares de atención</h3>
           <p className="w-full text-gris sm:w-auto sm:flex-1 sm:text-right">Evidencia principal de la práctica. Busca por institución o distrito y filtra por cono.</p>
         </Revelar>
+        {tablaDirectorio && (
+          <Revelar className="mb-10">
+            <EsquemaConos evidencia={tablaDirectorio} />
+          </Revelar>
+        )}
         <BloqueEvidencias evidencias={semana.evidencias.practica} procedencia="Evidencia de práctica" />
       </section>
     </div>

@@ -1,6 +1,7 @@
 import { MotionConfig } from 'motion/react'
 import { semanas } from './content/semanas'
 import { Navegacion, type EnlaceNav } from './components/layout/Navegacion'
+import { perfil } from './content/perfil'
 import { Pie } from './components/layout/Pie'
 import { Portada } from './components/secciones/Portada'
 import { SobreMi } from './components/secciones/SobreMi'
@@ -14,7 +15,13 @@ const enlaces: EnlaceNav[] = [
   { id: 'inicio', etiqueta: 'Inicio' },
   { id: 'sobre-mi', etiqueta: 'Sobre mí' },
   { id: 'recorrido', etiqueta: 'Recorrido' },
-  ...semanas.map((s) => ({ id: s.slug, etiqueta: `Semana ${s.numero}` })),
+  {
+    etiqueta: 'Semanas',
+    grupo: Array.from({ length: perfil.totalSemanas }, (_, i) => {
+      const s = semanas.find((x) => x.numero === i + 1)
+      return { id: s?.slug, etiqueta: `Semana ${i + 1}`, detalle: s?.titulo ?? 'Próximamente' }
+    }),
+  },
   { id: 'referencias', etiqueta: 'Referencias' },
 ]
 

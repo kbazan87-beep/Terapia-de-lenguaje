@@ -28,13 +28,7 @@ const columnasLugares: ColumnaTabla[] = completar(encabezadosLugares, anchoLugar
 }))
 
 const filasLugares: FilaTabla[] = registrosLugares.map((celdas) => {
-  const fila: FilaTabla = { celdas: completar(celdas, anchoLugares) }
-  if (esMia(celdas[11])) {
-    fila.destacada = true
-    fila.nota = 'La celda «Cono» está vacía en el original; el archivo actualizado identifica este aporte como zona Sur.'
-    fila.grupoFiltro = 'Sur'
-  }
-  return fila
+  return { celdas: completar(celdas, anchoLugares), destacada: esMia(celdas[11]) }
 })
 
 /* ── Hoja «Instrumentos» ─────────────────────────────────────────────────── */

@@ -7,6 +7,8 @@ export const perfil = {
   codigo: 'T0351',
   periodo: '2026-II',
   docente: 'Dra. Nelly Milagros Rojas Llerena',
+  /** Número de semanas del curso; las que aún no tienen materiales se muestran como próximas. */
+  totalSemanas: 7,
   concepto: 'Cada voz cuenta: mi recorrido hacia una terapia de lenguaje más cercana a la comunidad',
   frase: 'Creo en una comunicación que llegue a todas las personas, empezando por donde viven.',
   sobreMi: [

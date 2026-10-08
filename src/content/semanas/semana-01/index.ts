@@ -359,7 +359,7 @@ export const semana01: Semana = {
           },
           {
             pregunta: '¿Qué necesito reforzar o seguir aprendiendo?',
-            texto: 'Me falta conocer mejor cómo funciona la referencia y contrarreferencia en la práctica.',
+            texto: 'Me falta conocer mejor los distintos lugares que brindan los servicios para estar más informada al momento de derivar.',
           },
         ],
       },

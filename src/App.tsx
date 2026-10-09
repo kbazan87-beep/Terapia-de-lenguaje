@@ -7,6 +7,7 @@ import { Portada } from './components/secciones/Portada'
 import { SobreMi } from './components/secciones/SobreMi'
 import { Recorrido } from './components/secciones/Recorrido'
 import { Referencias } from './components/secciones/Referencias'
+import { Evaluacion } from './components/secciones/Evaluacion'
 import { SemanaSeccion } from './components/semana/SemanaSeccion'
 
 const indice = (n: number) => String(n).padStart(2, '0')
@@ -22,6 +23,7 @@ const enlaces: EnlaceNav[] = [
       return { id: s?.slug, etiqueta: `Semana ${i + 1}`, detalle: s?.titulo ?? 'Próximamente' }
     }),
   },
+  { id: 'evaluacion', etiqueta: 'Autoevaluación y coevaluación', corta: 'Evaluación' },
   { id: 'referencias', etiqueta: 'Referencias' },
 ]
 
@@ -36,7 +38,8 @@ export default function App() {
         {semanas.map((s, i) => (
           <SemanaSeccion key={s.slug} semana={s} indice={indice(3 + i)} />
         ))}
-        <Referencias semanas={semanas} indice={indice(3 + semanas.length)} />
+        <Evaluacion indice={indice(3 + semanas.length)} />
+        <Referencias semanas={semanas} indice={indice(4 + semanas.length)} />
       </main>
       <Pie />
     </MotionConfig>

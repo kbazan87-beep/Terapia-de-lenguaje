@@ -12,6 +12,7 @@
     "typecheck": "tsc -b"
   },
   "dependencies": {
+    "jspdf": "4.2.1",
     "lucide-react": "0.511.0",
     "motion": "12.15.0",
     "react": "19.1.0",

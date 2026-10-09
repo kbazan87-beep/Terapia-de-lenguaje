@@ -4,7 +4,8 @@ import { ChevronDown, Menu, X } from 'lucide-react'
 import { useSeccionActiva } from '../../hooks/useSeccionActiva'
 
 type ItemSemana = { id?: string; etiqueta: string; detalle: string }
-export type EnlaceNav = { id: string; etiqueta: string } | { etiqueta: string; grupo: ItemSemana[] }
+/** `corta`: etiqueta abreviada para el menú en pantallas medianas (el nombre completo se muestra desde lg). */
+export type EnlaceNav = { id: string; etiqueta: string; corta?: string } | { etiqueta: string; grupo: ItemSemana[] }
 
 const esGrupo = (e: EnlaceNav): e is Extract<EnlaceNav, { grupo: ItemSemana[] }> => 'grupo' in e
 
@@ -90,7 +91,14 @@ export function Navegacion({ enlaces }: { enlaces: EnlaceNav[] }) {
                 return (
                   <a key={e.id} href={`#${e.id}`} onClick={cerrar} aria-current={activo ? 'location' : undefined} className={pastilla(activo)}>
                     {fondoActivo(activo)}
-                    {e.etiqueta}
+                    {e.corta ? (
+                      <>
+                        <span className="lg:hidden">{e.corta}</span>
+                        <span className="hidden lg:inline">{e.etiqueta}</span>
+                      </>
+                    ) : (
+                      e.etiqueta
+                    )}
                   </a>
                 )
               }

@@ -31,7 +31,16 @@ const fichaPict24: EvidenciaProtocolo = {
   id: 'pict24',
   titulo: 'PICT-24 | Perú',
   subtitulo: 'Comunicación temprana · 0–24 meses',
-  descripcion: 'Ficha rápida de aplicación que elaboramos en grupo integrando el CSBS, el Cuestionario de intenciones comunicativas y la Escala R.E.E.L. Selecciona un rango de edad para ver sus ítems.',
+  descripcion: 'Ficha rápida de aplicación · comunicación temprana de 0 a 24 meses.',
+  introduccion:
+    'Como parte de la práctica, elaboramos grupalmente el PICT-24 | Perú, una propuesta académica de exploración de la comunicación temprana de 0 a 24 meses. Para su elaboración tomamos como referencia la escala R.E.E.L., el cuestionario CSBS-DP, sus criterios de puntuación y el Cuestionario de intenciones comunicativas. A partir de estos materiales seleccionamos y organizamos conductas comunicativas por rangos de edad.',
+  instrumentos: [
+    { nombre: 'Escala para la aparición del lenguaje receptivo y expresivo (R.E.E.L.)', archivo: 'Escala REEL OFICIAL' },
+    { nombre: 'CSBS-DP: Cuestionario del bebé y niño pequeño', archivo: 'CSBS-DP CUESTIONARIO' },
+    { nombre: 'CSBS-DP: criterios de puntuación del Cuestionario del bebé y niño pequeño', archivo: 'CSBS-DP Puntajes' },
+    { nombre: 'Cuestionario para padres sobre utilización de funciones e intenciones comunicativas', archivo: 'Cuestionario de intenciones comunicativas' },
+  ],
+  nota: 'El PICT-24 es una propuesta académica no estandarizada, sin puntos de corte validados en población peruana; no debe utilizarse como instrumento clínico validado.',
   rangos: pict24.rangos,
   areas: [
     { letra: 'R', nombre: 'Receptivo' },
@@ -41,24 +50,16 @@ const fichaPict24: EvidenciaProtocolo = {
     { letra: 'J', nombre: 'Juego' },
   ],
   registro: pict24.parrafos.find((p) => p.startsWith('Marque UNA opción')) ?? '',
-  advertencias: [
-    'Propuesta académica no estandarizada: no tiene baremos ni puntos de corte validados en el Perú y no debe utilizarse como herramienta clínica validada.',
-    `La ficha lo indica así: «${pict24.parrafos.find((p) => p.startsWith('Aplicar según edad')) ?? ''}»`,
-  ],
   integrantes: {
     titulo: 'Integrantes del trabajo grupal',
-    nombres: ['Ximena Abanto', 'Arantza Gamarra', 'Daniela Yupanqui', 'Claudia de la Cruz'],
+    nombres: ['Kimberli Zaleth Cardozo Casimiro', 'Ximena Abanto', 'Arantza Gamarra', 'Claudia de la Cruz'],
   },
   paginas: [pagina1, pagina2, pagina3, pagina4].map((src, i) => ({
     src,
     etiqueta: `Página ${i + 1}`,
     alt: `Página ${i + 1} de la ficha PICT-24 | Perú, con sus tablas de ítems por rango de edad.`,
   })),
-  // El visor de artefactos bloquea las descargas: allí se enlaza el archivo en GitHub.
-  archivo:
-    import.meta.env.MODE === 'artifact'
-      ? { href: `https://github.com/kbazan87-beep/Terapia-de-lenguaje/blob/main/${encodeURIComponent(NOMBRE_WORD)}`, nombre: NOMBRE_WORD, externo: true }
-      : { href: wordPict24, nombre: NOMBRE_WORD, externo: false },
+  archivo: { href: wordPict24, nombre: NOMBRE_WORD, descarga: NOMBRE_WORD.normalize('NFD').replace(/[\u0300-\u036f]/g, '') },
 }
 
 export const semana05: Semana = {

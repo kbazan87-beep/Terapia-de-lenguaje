@@ -163,15 +163,22 @@ export type EvidenciaProtocolo = {
   titulo: string
   subtitulo: string
   descripcion: string
+  /** Cómo se elaboró la ficha (texto de la estudiante). */
+  introduccion: string
+  /** Materiales consultados para elaborarla; solo se muestran sus nombres. */
+  instrumentos: { nombre: string; archivo: string }[]
+  /** Aviso breve de uso no clínico. */
+  nota: string
   rangos: { rango: string; items: { codigo: string; conducta: string; situacion: string | null }[] }[]
   /** Áreas que la ficha usa en su resumen, con la letra de código a la que corresponden. */
   areas: { letra: string; nombre: string | null }[]
   /** Textos de la ficha sobre cómo se registra cada ítem (se muestran tal cual, sin simular su uso). */
   registro: string
-  advertencias: string[]
   integrantes: { titulo: string; nombres: string[] }
   paginas: { src: string; alt: string; etiqueta: string }[]
-  archivo: { href: string; nombre: string; externo: boolean }
+  /** Copia del Word incluida en la landing para descargarla directamente. */
+  /** `descarga`: nombre de archivo seguro para todos los navegadores (sin tildes). */
+  archivo: { href: string; nombre: string; descarga: string }
 }
 
 export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria | EvidenciaVideo | EvidenciaProtocolo

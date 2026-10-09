@@ -1,6 +1,6 @@
 import { useRef, useState, type KeyboardEvent } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { Download, ExternalLink, FileText, ShieldAlert, Users } from 'lucide-react'
+import { BookMarked, Download, FileText, Info, Users } from 'lucide-react'
 import type { EvidenciaImagen, EvidenciaProtocolo } from '../../../content/tipos'
 import { VisorImagen } from './VisorImagen'
 
@@ -12,6 +12,53 @@ const colores: Record<string, { fondo: string; suave: string; texto: string }> =
   J: { fondo: 'bg-petroleo-900', suave: 'bg-crema', texto: 'text-petroleo-900' },
 }
 const color = (codigo: string) => colores[codigo[0]] ?? colores.J
+
+type Descargas = { save: (r: { filename: string; data: Blob }) => Promise<unknown> }
+type ClaudeVisor = { use?: (nombre: 'downloads') => Promise<Descargas | null> }
+
+/** Contenido del archivo como Blob, también cuando viene incrustado como data: URI. */
+async function comoBlob(href: string) {
+  if (!href.startsWith('data:')) return (await fetch(href)).blob()
+  const [cabecera, b64] = href.split(',')
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))
+  return new Blob([bytes], { type: cabecera.slice(5).split(';')[0] })
+}
+
+/**
+ * Descarga directa del Word. En el visor de artefactos (donde los enlaces de descarga están bloqueados)
+ * usa la capacidad «downloads», que pide confirmación al visitante; fuera de él, un enlace normal.
+ */
+function BotonDescarga({ href, nombre }: { href: string; nombre: string }) {
+  const [estado, setEstado] = useState<string | null>(null)
+  const clase = 'inline-flex items-center gap-2 rounded-full bg-lavanda-700 px-5 py-3 text-sm font-semibold text-white hover:bg-petroleo-900'
+  if (import.meta.env.MODE !== 'artifact') {
+    return (
+      <a href={href} download={nombre} className={clase}>
+        <Download className="size-4" aria-hidden /> Descargar ficha PICT-24
+      </a>
+    )
+  }
+  const descargar = async () => {
+    setEstado(null)
+    const descargas = await (window as unknown as { claude?: ClaudeVisor }).claude?.use?.('downloads')
+    if (!descargas) return setEstado('La descarga no está disponible en esta vista.')
+    try {
+      await descargas.save({ filename: nombre, data: await comoBlob(href) })
+      setEstado('Descarga iniciada.')
+    } catch (e) {
+      const codigo = (e as { code?: string }).code
+      setEstado(codigo === 'declined' ? null : codigo === 'rate_limited' ? 'Ya hay una descarga pendiente de confirmar.' : 'No se pudo descargar el archivo en esta vista.')
+    }
+  }
+  return (
+    <span className="inline-flex flex-wrap items-center gap-3">
+      <button type="button" onClick={descargar} className={clase}>
+        <Download className="size-4" aria-hidden /> Descargar ficha PICT-24
+      </button>
+      <span className="text-xs text-gris" aria-live="polite">{estado}</span>
+    </span>
+  )
+}
 
 /**
  * Explorador de una ficha de protocolo por rangos de edad.
@@ -38,18 +85,32 @@ export function ExploradorProtocolo({ evidencia }: { evidencia: EvidenciaProtoco
 
   return (
     <div className="space-y-5">
-      {/* Advertencia de uso */}
-      <div role="note" className="flex gap-4 rounded-3xl border border-coral-400 bg-coral-50 p-5 sm:p-6">
-        <ShieldAlert className="mt-0.5 size-6 shrink-0 text-coral-700" aria-hidden />
-        <div className="space-y-1.5 text-sm leading-relaxed text-tinta">
-          {evidencia.advertencias.map((a, i) => (
-            <p key={i} className={i === 0 ? 'font-semibold text-coral-700' : ''}>
-              {a}
-            </p>
-          ))}
-        </div>
+      {/* 1. ¿Cómo elaboramos el PICT-24? */}
+      <div className="rounded-3xl bg-petroleo-700 p-6 text-white sm:p-8">
+        <p className="eyebrow text-petroleo-100">¿Cómo elaboramos el PICT-24?</p>
+        <p className="mt-3 max-w-4xl text-lg leading-relaxed text-white/95">{evidencia.introduccion}</p>
       </div>
 
+      {/* 2. Instrumentos de referencia */}
+      <div className="rounded-3xl border border-linea bg-papel p-5 sm:p-6">
+        <p className="eyebrow flex items-center gap-2 text-[0.68rem] text-petroleo-500">
+          <BookMarked className="size-3.5" aria-hidden /> Instrumentos de referencia
+        </p>
+        <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+          {evidencia.instrumentos.map((i) => (
+            <li key={i.archivo} className="rounded-2xl bg-crema px-4 py-3 text-sm">
+              <span className="block font-medium text-tinta">{i.nombre}</span>
+              <span className="block text-xs text-gris">{i.archivo}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-3 flex items-start gap-2 text-xs leading-relaxed text-gris">
+          <Info className="mt-0.5 size-3.5 shrink-0 text-coral-700" aria-hidden />
+          {evidencia.nota}
+        </p>
+      </div>
+
+      {/* 3. Explorador por rangos de edad */}
       <div className="tarjeta overflow-hidden">
         <div className="border-b border-linea p-5 sm:p-7">
           <p className="eyebrow text-lavanda-700">{evidencia.subtitulo}</p>
@@ -146,7 +207,7 @@ export function ExploradorProtocolo({ evidencia }: { evidencia: EvidenciaProtoco
       </div>
 
       <div className="grid gap-5 lg:grid-cols-12">
-        {/* Ficha original */}
+        {/* 4. Ficha original y descarga */}
         <div className="tarjeta p-5 sm:p-6 lg:col-span-8">
           <p className="flex items-center gap-2 font-semibold text-tinta">
             <FileText className="size-4 text-lavanda-700" aria-hidden /> Ficha original (Word)
@@ -167,19 +228,12 @@ export function ExploradorProtocolo({ evidencia }: { evidencia: EvidenciaProtoco
             ))}
           </ol>
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <a
-              href={evidencia.archivo.href}
-              {...(evidencia.archivo.externo ? { target: '_blank', rel: 'noreferrer' } : { download: evidencia.archivo.nombre })}
-              className="inline-flex items-center gap-2 rounded-full bg-lavanda-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-petroleo-900"
-            >
-              {evidencia.archivo.externo ? <ExternalLink className="size-4" aria-hidden /> : <Download className="size-4" aria-hidden />}
-              {evidencia.archivo.externo ? 'Abrir el Word en GitHub' : 'Descargar el Word'}
-            </a>
+            <BotonDescarga href={evidencia.archivo.href} nombre={evidencia.archivo.descarga} />
             <span className="text-xs text-gris">{evidencia.archivo.nombre}</span>
           </div>
         </div>
 
-        {/* Integrantes */}
+        {/* 5. Integrantes */}
         <div className="rounded-3xl bg-lavanda-50 p-5 sm:p-6 lg:col-span-4">
           <p className="eyebrow flex items-center gap-2 text-[0.68rem] text-lavanda-700">
             <Users className="size-3.5" aria-hidden /> {evidencia.integrantes.titulo}

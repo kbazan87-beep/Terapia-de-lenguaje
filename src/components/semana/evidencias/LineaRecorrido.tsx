@@ -13,6 +13,8 @@ const tipos: Record<Evidencia['tipo'], string> = {
   protocolo: 'Protocolo',
   ensayo: 'Ensayo',
   recorrido: 'Portafolio',
+  caso: 'Caso',
+  revision: 'Comparación',
 }
 
 const iconos = [BookOpen, Wrench, MessageCircleHeart]

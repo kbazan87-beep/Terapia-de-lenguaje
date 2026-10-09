@@ -18,7 +18,7 @@ export function Referencias({ semanas, indice }: { semanas: Semana[]; indice: st
         <ol className="divide-y divide-linea border-y border-linea">
           {lista.map((r, i) => (
             <Revelar as="li" key={r.id} retraso={i * 0.05} className="grid gap-2 py-6 sm:grid-cols-[4rem_1fr]">
-              <span className="font-display text-coral-700">0{i + 1}</span>
+              <span className="font-display text-coral-700">{String(i + 1).padStart(2, '0')}</span>
               <p className="pl-8 -indent-8 text-lg leading-relaxed text-tinta">
                 <TextoConFormato fragmentos={r.fragmentos} />
               </p>

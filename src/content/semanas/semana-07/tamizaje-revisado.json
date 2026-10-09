@@ -1,0 +1,366 @@
+{
+ "original": {
+  "parrafos": [
+   "PICT-24 | PERÚ — FICHA RÁPIDA DE APLICACIÓN",
+   "Comunicación temprana · 0–24 meses | Propuesta clínica no estandarizada",
+   "Niño/a: __________________________________  Nacimiento: __________  Evaluación: __________  Edad: ______ meses",
+   "Edad corregida (si aplica): ______  Evaluador/a: _____________________  Informante: _____________________",
+   "Marque UNA opción por ítem:  2 = adquirido/consistente   1 = emergente/inconstante   0 = no observado ni referido   NE = no evaluado.  O = observado; F = referido por familia. No sumar NE como 0.",
+   "Receptivo: □ adquirido □ emergente □ requiere ampliar evaluación     Expresivo: □ adquirido □ emergente □ requiere ampliar evaluación",
+   "Social/pragmático: □ adquirido □ emergente □ requiere ampliar evaluación    Juego: □ adquirido □ emergente □ requiere ampliar evaluación",
+   "Conducta: □ seguimiento habitual □ orientación familiar □ reevaluación □ evaluación fonoaudiológica □ evaluación audiológica □ derivación",
+   "Observación imprescindible (opcional): __________________________________________________________________________________",
+   "Firma: __________________________   Próximo control: ______________",
+   "Aplicar según edad y antecedentes; explorar hitos previos cuando corresponda. Esta ficha no tiene baremos ni puntos de corte validados en población peruana. No utilizar puntajes de corte del CSBS-DP para este instrumento modificado."
+  ]
+ },
+ "revisado": {
+  "parrafos": [
+   "TAMIZAJE",
+   "Comunicación temprana · 0–24 meses | Propuesta clínica no estandarizada",
+   "Niño/a: __________________________________ Nacimiento: __________ Evaluación: __________ Edad: ______ meses",
+   "Edad corregida (si aplica): ______ Evaluador/a: _____________________ Informante: _____________________",
+   "Marque una sola opción por ítem según corresponda: SI = lo realiza NO = no lo realiza / no recuerda o no está seguro/a"
+  ],
+  "encabezado": [
+   "Conducta clave / situación breve",
+   "Respuesta"
+  ],
+  "respuesta": "□ SI □ NO"
+ },
+ "rangos": [
+  {
+   "rango": "0–3 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R1",
+      "conducta": "Se calma o cambia su actividad al escuchar una voz familiar.",
+      "situacion": "Hablarle suavemente durante el cuidado"
+     },
+     "revisado": "Se calma o cambia su comportamiento al escuchar una voz familiar. (Hablarle suavemente durante el cuidado)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "R2",
+      "conducta": "Orienta la mirada hacia el rostro de quien le habla.",
+      "situacion": "Conversación cara a cara"
+     },
+     "revisado": "Dirige la mirada hacia el rostro de quien le habla. (Conversación cara a cara)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": null,
+     "revisado": "Se queda callado un momento cuando le hablas.",
+     "cambio": "nuevo"
+    },
+    {
+     "original": {
+      "codigo": "E1",
+      "conducta": "Emite sonidos distintos del llanto (vocalizaciones).",
+      "situacion": "Pausa tras hablarle"
+     },
+     "revisado": "Emite sonidos distintos al llanto. (vocalizaciones como «Aaa», «Eee»)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "S1",
+      "conducta": "Sonríe o muestra placer durante el intercambio con un adulto.",
+      "situacion": "Juego cara a cara"
+     },
+     "revisado": "Sonríe o muestra placer durante el intercambio con un adulto. (Juego cara a cara)",
+     "cambio": "sin cambios"
+    }
+   ]
+  },
+  {
+   "rango": "4–6 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R3",
+      "conducta": "Busca con la mirada o gira hacia una voz cercana.",
+      "situacion": "Llamarlo desde un costado, sin sobresaltarlo"
+     },
+     "revisado": "Busca con la mirada o gira hacia una voz cercana. (Llamarlo desde un costado)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "E2",
+      "conducta": "Vocaliza para mantener un intercambio y responde con sonidos a la voz del adulto.",
+      "situacion": "Turnos de vocalización"
+     },
+     "revisado": "Vocaliza para mantener un intercambio y responde con sonidos a la voz del adulto. (Turnos de vocalización)",
+     "cambio": "sin cambios"
+    },
+    {
+     "original": {
+      "codigo": "E3",
+      "conducta": "Produce sonidos variados durante el juego, incluidos sonidos consonánticos emergentes.",
+      "situacion": "Juego vocal espontáneo"
+     },
+     "revisado": "Produce sonidos variados durante el juego, empezando a juntar vocales y consonantes. (Vocalizaciones como gu, ba o da)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "S2",
+      "conducta": "Alterna atención entre el rostro del adulto y el juego compartido.",
+      "situacion": "Canción con pausa"
+     },
+     "revisado": "Va mirando por turnos tu cara y el juguete con el que están interactuando. (Juego compartido)",
+     "cambio": "reformulado"
+    }
+   ]
+  },
+  {
+   "rango": "7–9 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R4",
+      "conducta": "Responde habitualmente cuando lo llaman por su nombre.",
+      "situacion": "Llamarlo sin tocarlo ni señalar"
+     },
+     "revisado": "Responde habitualmente cuando lo llaman por su nombre. (Llamarlo sin tocarlo ni señalar)",
+     "cambio": "sin cambios"
+    },
+    {
+     "original": {
+      "codigo": "R5",
+      "conducta": "Reconoce alguna palabra o rutina familiar (p. ej., «upa», «chau»).",
+      "situacion": "Rutina conocida"
+     },
+     "revisado": "Reconoce alguna palabra o rutina familiar. (ej., «upa para levantarlo», «chau para despedirse») (Rutina conocida)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "E4",
+      "conducta": "Balbucea con secuencias silábicas, p. ej., «ba-ba», «ma-ma».",
+      "situacion": "Juego vocal"
+     },
+     "revisado": "Balbucea con secuencias silábicas, ej., «ba-ba», «ma-ma».",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "I1",
+      "conducta": "Solicita continuar un juego mediante mirada, movimiento, gesto o sonido.",
+      "situacion": "Detener brevemente un juego agradable"
+     },
+     "revisado": "Solicita continuar un juego mediante mirada, movimiento, gesto o sonido.",
+     "cambio": "reformulado"
+    }
+   ]
+  },
+  {
+   "rango": "10–12 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R6",
+      "conducta": "Sigue una indicación familiar de un paso con apoyo contextual mínimo («dame», «ven»).",
+      "situacion": "Pedirle un objeto conocido"
+     },
+     "revisado": "Entiende y obedece una orden sencilla de una sola acción. (como \"dame\" o \"ven\")",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "E5",
+      "conducta": "Imita sonidos o intenta repetir una palabra durante una interacción.",
+      "situacion": "Juego con sonidos conocidos"
+     },
+     "revisado": "Imita sonidos o intenta repetir una palabra durante una interacción.",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "I2",
+      "conducta": "Pide un objeto o ayuda de manera intencional mediante mirada, gesto o voz.",
+      "situacion": "Objeto deseado visible pero fuera de alcance"
+     },
+     "revisado": "Pide un objeto o busca ayuda mediante la mirada, gesto o voz.",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "S3",
+      "conducta": "Comparte interés con el adulto: muestra, entrega o dirige la atención hacia un objeto.",
+      "situacion": "Juego con objeto atractivo"
+     },
+     "revisado": "Comparte interés con el adulto: muestra, entrega o dirige la atención hacia un objeto.",
+     "cambio": "reformulado"
+    }
+   ]
+  },
+  {
+   "rango": "13–15 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R7",
+      "conducta": "Identifica un objeto familiar cuando se lo nombran sin señalarlo.",
+      "situacion": "«¿Dónde está la pelota?» entre dos objetos"
+     },
+     "revisado": "Identifica un objeto familiar cuando se lo nombran sin señalarlo. (se le presenta dos objetos y se le pregunta «¿Dónde está la pelota?»)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "E6",
+      "conducta": "Usa al menos una palabra o aproximación estable con significado,.",
+      "situacion": "Preguntar al cuidador por ejemplos en casa"
+     },
+     "revisado": "Usa al menos una palabra o aproximación estable con significado. (dice “agua” o “aba” cuando tiene sed)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "I3",
+      "conducta": "Rechaza o protesta intencionalmente mediante gesto, voz, seña o palabra.",
+      "situacion": "Ofrecer dos opciones, respetando rechazo"
+     },
+     "revisado": "Rechaza o protesta mediante gesto, voz, seña o palabra.",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "S4",
+      "conducta": "Señala, muestra o entrega algo para compartir interés, no solo para pedir.",
+      "situacion": "Juego con libro u objeto novedoso"
+     },
+     "revisado": "Señala, muestra o entrega algo para compartir interés, no solo para pedir.",
+     "cambio": "reformulado"
+    }
+   ]
+  },
+  {
+   "rango": "16–18 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R8",
+      "conducta": "Identifica una parte del cuerpo o un objeto familiar a pedido verbal.",
+      "situacion": "«¿Dónde está tu nariz?» sin señalar"
+     },
+     "revisado": "Identifica una parte del cuerpo o un objeto familiar a pedido verbal. («¿Dónde está tu nariz?» y señala)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "R9",
+      "conducta": "Cumple una instrucción sencilla fuera de la rutina inmediata.",
+      "situacion": "«Pon la pelota en la caja»"
+     },
+     "revisado": "Cumple una instrucción sencilla fuera de la rutina cotidiana. («Pon la pelota en la caja»)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "E7",
+      "conducta": "Emplea varias palabras o aproximaciones consistentes para comunicar necesidades o intereses.",
+      "situacion": "Registrar ejemplos y cantidad aproximada"
+     },
+     "revisado": "Use varias palabras o aproximaciones para comunicar necesidades o intereses. (ej. decir \"aba\" para agua o \"miau\" para el gato)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "J1",
+      "conducta": "Usa un objeto cotidiano con su función en el juego (vaso, peine, teléfono de juguete).",
+      "situacion": "Juego libre con objetos seguros"
+     },
+     "revisado": "Usa un objeto cotidiano con su función correspondiente durante el juego (ej. vaso - toma agua, peine - se peina, teléfono de juguete - contesta o llama).",
+     "cambio": "reformulado"
+    }
+   ]
+  },
+  {
+   "rango": "19–21 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R10",
+      "conducta": "Sigue dos acciones sencillas relacionadas con objetos, sin modelo gestual.",
+      "situacion": "«Agarra la pelota y dásela a mamá»"
+     },
+     "revisado": "Sigue dos órdenes sencillas relacionadas con objetos, sin darle un modelo a seguir. («Agarra la pelota y dásela a mamá»)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "E8",
+      "conducta": "Aumenta su repertorio de palabras y usa palabras o señas para distintas funciones.",
+      "situacion": "Pedir ejemplos de petición, rechazo y comentario"
+     },
+     "revisado": "Aumenta su vocabulario y usa más palabras o señas para comunicarse.",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "I4",
+      "conducta": "Busca la atención del adulto para mostrarle algo interesante.",
+      "situacion": "Juego compartido con juguete novedoso"
+     },
+     "revisado": "Busca la atención del adulto para mostrarle algo interesante.",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "J2",
+      "conducta": "Realiza juego simbólico inicial (dar de comer a un muñeco, hacerlo dormir).",
+      "situacion": "Muñeco y cucharita"
+     },
+     "revisado": "Realiza juegos de imitación (dar de comer a un muñeco, hacerlo dormir).",
+     "cambio": "reformulado"
+    }
+   ]
+  },
+  {
+   "rango": "22–24 MESES",
+   "pares": [
+    {
+     "original": {
+      "codigo": "R11",
+      "conducta": "Selecciona entre varios objetos familiares el que se nombra, sin pistas gestuales.",
+      "situacion": "Presentar 3–5 objetos conocidos"
+     },
+     "revisado": "Señala el objeto que se le nombra entre varios objetos conocidos. (Presentar 3–5 objetos conocidos)",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "R12",
+      "conducta": "Comprende instrucciones verbales breves de dos pasos relacionados.",
+      "situacion": "«Busca el vaso y ponlo en la mesa»"
+     },
+     "revisado": "Comprende instrucciones verbales breves de dos pasos relacionados. («Busca el vaso y ponlo en la mesa»)",
+     "cambio": "sin cambios"
+    },
+    {
+     "original": {
+      "codigo": "E9",
+      "conducta": "Combina espontáneamente dos palabras con sentido (p. ej., «más agua», «mamá ven»).",
+      "situacion": "Registrar ejemplos espontáneos"
+     },
+     "revisado": "Combina espontáneamente dos palabras con sentido (ej., «más agua», «mamá ven»).",
+     "cambio": "reformulado"
+    },
+    {
+     "original": {
+      "codigo": "I5",
+      "conducta": "Utiliza comunicación para pedir, rechazar y compartir información o interés con otra persona.",
+      "situacion": "Observar juego y corroborar en casa"
+     },
+     "revisado": "Utiliza comunicación para pedir, rechazar y compartir información o interés con otra persona. (ej. Pide agua, rechaza algo que no quiere o muestra un juguete para compartirlo)",
+     "cambio": "reformulado"
+    }
+   ]
+  }
+ ]
+}

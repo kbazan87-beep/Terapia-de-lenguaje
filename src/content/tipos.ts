@@ -204,7 +204,56 @@ export type EvidenciaRecorrido = {
   organizacion: { titulo: string; texto: string }[]
 }
 
-export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria | EvidenciaVideo | EvidenciaProtocolo | EvidenciaEnsayo | EvidenciaRecorrido
+/** Caso aplicado de clase: datos tal como se presentaron y preguntas trabajadas en equipo. */
+export type EvidenciaCaso = {
+  tipo: 'caso'
+  id: string
+  titulo: string
+  descripcion: string
+  persona: { nombre: string; edad: string; contexto: string }
+  /** Datos del caso agrupados; se muestran sin interpretación clínica. */
+  datos: { grupo: string; items: string[] }[]
+  /** Preguntas de la consigna, con lo que la clase orienta para cada una (no son respuestas del equipo). */
+  preguntas: { pregunta: string; orientacion: string[]; nota?: string }[]
+  fuente: string
+  /** Aviso cuando una evidencia (p. ej., la captura del Padlet) no está entre los materiales. */
+  pendiente: string
+  integrantes: { titulo: string; nombres: string[] }
+}
+
+/** Ítem de un protocolo: código y texto original, y su versión revisada. */
+export type ParRevision = {
+  original: { codigo: string; conducta: string; situacion: string | null } | null
+  revisado: string | null
+  cambio: 'sin cambios' | 'reformulado' | 'nuevo' | 'retirado'
+}
+
+/** Comparación entre la versión inicial de un protocolo y su versión revisada. */
+export type EvidenciaRevision = {
+  tipo: 'revision'
+  id: string
+  titulo: string
+  descripcion: string
+  versiones: { semana: string; etapa: string; nombre: string; paginas: { src: string; alt: string }[] }[]
+  /** Adaptaciones lingüísticas, cada una con ejemplos reales (código del ítem original); `rangos` guarda los pares de ítems. */
+  adaptaciones: { id: string; titulo: string; descripcion: string; ejemplos: string[] }[]
+  rangos: { rango: string; pares: ParRevision[] }[]
+  referencia: { nombre: string; archivo: string; paginas: { src: string; alt: string }[] }
+  integrantes: { titulo: string; nombres: string[] }
+  archivo: { href: string; nombre: string }
+}
+
+export type Evidencia =
+  | EvidenciaImagen
+  | EvidenciaTabla
+  | EvidenciaFicha
+  | EvidenciaGaleria
+  | EvidenciaVideo
+  | EvidenciaProtocolo
+  | EvidenciaEnsayo
+  | EvidenciaRecorrido
+  | EvidenciaCaso
+  | EvidenciaRevision
 
 /** Bloques de contenido teórico. Cada semana combina los que necesita su tema. */
 export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } & (

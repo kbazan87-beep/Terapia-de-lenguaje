@@ -6,6 +6,7 @@ import { MapaConceptual } from './MapaConceptual'
 import { RolTerapeuta } from './RolTerapeuta'
 import { EvidenciaClase } from './bloques/EvidenciaClase'
 import { BloqueEvidencias } from '../evidencias/BloqueEvidencias'
+import { Comparacion } from './bloques/Comparacion'
 
 export function Bloque({ id, letra, titulo, descripcion, children }: { id: string; letra: string; titulo: string; descripcion?: string; children: ReactNode }) {
   return (
@@ -31,6 +32,8 @@ function Contenido({ bloque }: { bloque: BloqueTeoria }) {
       return <RolTerapeuta rol={bloque.rol} />
     case 'evidencia':
       return <EvidenciaClase bloque={bloque} />
+    case 'comparacion':
+      return <Comparacion bloque={bloque} />
     case 'evidencias':
       return <BloqueEvidencias evidencias={bloque.evidencias} procedencia={bloque.procedencia} />
   }

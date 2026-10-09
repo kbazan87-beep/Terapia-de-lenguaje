@@ -156,7 +156,25 @@ export type EvidenciaVideo = {
   relacionado?: { titulo: string; texto: string; href: string; boton: string; items: string[] }
 }
 
-export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria | EvidenciaVideo
+/** Ficha de un protocolo organizada por rangos de edad (sin puntajes ni cálculos). */
+export type EvidenciaProtocolo = {
+  tipo: 'protocolo'
+  id: string
+  titulo: string
+  subtitulo: string
+  descripcion: string
+  rangos: { rango: string; items: { codigo: string; conducta: string; situacion: string | null }[] }[]
+  /** Áreas que la ficha usa en su resumen, con la letra de código a la que corresponden. */
+  areas: { letra: string; nombre: string | null }[]
+  /** Textos de la ficha sobre cómo se registra cada ítem (se muestran tal cual, sin simular su uso). */
+  registro: string
+  advertencias: string[]
+  integrantes: { titulo: string; nombres: string[] }
+  paginas: { src: string; alt: string; etiqueta: string }[]
+  archivo: { href: string; nombre: string; externo: boolean }
+}
+
+export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria | EvidenciaVideo | EvidenciaProtocolo
 
 /** Bloques de contenido teórico. Cada semana combina los que necesita su tema. */
 export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } & (
@@ -165,6 +183,13 @@ export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } 
   | { tipo: 'rol'; rol: { lema: string; enfoque: string; etiquetaEnfoque?: string; fuente: string; funciones: FuncionRol[] } }
   | { tipo: 'evidencia'; evidencia: EvidenciaImagen; contexto: { pregunta: string; texto: string } }
   | { tipo: 'evidencias'; evidencias: Evidencia[]; procedencia: string }
+  | {
+      tipo: 'comparacion'
+      columnas: { titulo: string; pregunta: string; rasgos: string[] }[]
+      analogia: string
+      clave: string
+      fuente: string
+    }
 )
 
 export type EtapaReflexion = {

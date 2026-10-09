@@ -1,8 +1,9 @@
 import { useRef, useState, type KeyboardEvent } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { BookMarked, Download, FileText, Info, Users } from 'lucide-react'
+import { BookMarked, Download, Eye, FileText, Info, Users } from 'lucide-react'
 import type { EvidenciaImagen, EvidenciaProtocolo } from '../../../content/tipos'
 import { VisorImagen } from './VisorImagen'
+import { VisorDocumento } from './VisorDocumento'
 
 const colores: Record<string, { fondo: string; suave: string; texto: string }> = {
   R: { fondo: 'bg-petroleo-700', suave: 'bg-petroleo-50', texto: 'text-petroleo-700' },
@@ -68,6 +69,7 @@ export function ExploradorProtocolo({ evidencia }: { evidencia: EvidenciaProtoco
   const [rango, setRango] = useState(0)
   const [area, setArea] = useState<string | null>(null)
   const [pagina, setPagina] = useState<EvidenciaImagen | null>(null)
+  const [documento, setDocumento] = useState<number | null>(null)
   const pestanas = useRef<(HTMLButtonElement | null)[]>([])
   const n = evidencia.rangos.length
   const actual = evidencia.rangos[rango]
@@ -97,10 +99,24 @@ export function ExploradorProtocolo({ evidencia }: { evidencia: EvidenciaProtoco
           <BookMarked className="size-3.5" aria-hidden /> Instrumentos de referencia
         </p>
         <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-          {evidencia.instrumentos.map((i) => (
-            <li key={i.archivo} className="rounded-2xl bg-crema px-4 py-3 text-sm">
-              <span className="block font-medium text-tinta">{i.nombre}</span>
-              <span className="block text-xs text-gris">{i.archivo}</span>
+          {evidencia.instrumentos.map((ins, k) => (
+            <li key={ins.archivo}>
+              <button
+                type="button"
+                onClick={() => setDocumento(k)}
+                className="group flex h-full w-full items-start gap-3 rounded-2xl bg-crema px-4 py-3 text-left text-sm transition hover:-translate-y-0.5 hover:bg-petroleo-50 hover:shadow-sm"
+              >
+                <img src={ins.paginas[0]?.src} alt="" className="h-14 w-11 shrink-0 rounded-md bg-white object-cover object-top ring-1 ring-linea" loading="lazy" />
+                <span className="min-w-0">
+                  <span className="block font-medium text-tinta">{ins.nombre}</span>
+                  <span className="mt-0.5 flex items-center gap-1.5 text-xs text-gris">
+                    {ins.archivo} · {ins.paginas.length} {ins.paginas.length === 1 ? 'página' : 'páginas'}
+                  </span>
+                  <span className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-petroleo-700 group-hover:underline">
+                    <Eye className="size-3.5" aria-hidden /> Ver documento
+                  </span>
+                </span>
+              </button>
             </li>
           ))}
         </ul>
@@ -249,6 +265,15 @@ export function ExploradorProtocolo({ evidencia }: { evidencia: EvidenciaProtoco
       </div>
 
       {pagina && <VisorImagen evidencia={pagina} abierto cerrar={() => setPagina(null)} />}
+      {documento !== null && (
+        <VisorDocumento
+          titulo={evidencia.instrumentos[documento].nombre}
+          subtitulo={evidencia.instrumentos[documento].archivo}
+          paginas={evidencia.instrumentos[documento].paginas}
+          abierto
+          cerrar={() => setDocumento(null)}
+        />
+      )}
     </div>
   )
 }

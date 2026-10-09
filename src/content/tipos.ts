@@ -166,7 +166,7 @@ export type EvidenciaProtocolo = {
   /** Cómo se elaboró la ficha (texto de la estudiante). */
   introduccion: string
   /** Materiales consultados para elaborarla; solo se muestran sus nombres. */
-  instrumentos: { nombre: string; archivo: string }[]
+  instrumentos: { nombre: string; archivo: string; paginas: { src: string; alt: string }[] }[]
   /** Aviso breve de uso no clínico. */
   nota: string
   rangos: { rango: string; items: { codigo: string; conducta: string; situacion: string | null }[] }[]

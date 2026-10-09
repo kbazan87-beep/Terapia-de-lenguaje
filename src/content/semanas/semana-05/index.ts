@@ -14,6 +14,14 @@ import wordPict24 from '../../../assets/semana-5/pict24-peru.docx?url'
 
 const PPT_RBC = 'Presentación de clase «Evaluación sobre Rehabilitación Basada en la Comunidad», semana 5'
 const PPT_TAM = 'Presentación de clase «Tamizajes en el área de lenguaje», semana 5'
+// Páginas de los instrumentos de referencia, servidas como archivos aparte (public/media/referencias).
+const PAGINAS_REFERENCIA: Record<string, number> = { reel: 7, 'csbs-cuestionario': 1, 'csbs-puntajes': 4, intenciones: 2 }
+const paginasDe = (carpeta: string, nombre: string) =>
+  Array.from({ length: PAGINAS_REFERENCIA[carpeta] }, (_, i) => ({
+    src: `${import.meta.env.BASE_URL}media/referencias/${carpeta}/pagina-${i + 1}.jpg`,
+    alt: `${nombre}, página ${i + 1}.`,
+  }))
+
 const NOMBRE_WORD = 'Evidencia práctica PICT24 - Abanto, Gamarra, De la cruz y Cardozo.docx'
 
 const evidenciaSala: EvidenciaImagen = {
@@ -35,10 +43,14 @@ const fichaPict24: EvidenciaProtocolo = {
   introduccion:
     'Como parte de la práctica, elaboramos grupalmente el PICT-24 | Perú, una propuesta académica de exploración de la comunicación temprana de 0 a 24 meses. Para su elaboración tomamos como referencia la escala R.E.E.L., el cuestionario CSBS-DP, sus criterios de puntuación y el Cuestionario de intenciones comunicativas. A partir de estos materiales seleccionamos y organizamos conductas comunicativas por rangos de edad.',
   instrumentos: [
-    { nombre: 'Escala para la aparición del lenguaje receptivo y expresivo (R.E.E.L.)', archivo: 'Escala REEL OFICIAL' },
-    { nombre: 'CSBS-DP: Cuestionario del bebé y niño pequeño', archivo: 'CSBS-DP CUESTIONARIO' },
-    { nombre: 'CSBS-DP: criterios de puntuación del Cuestionario del bebé y niño pequeño', archivo: 'CSBS-DP Puntajes' },
-    { nombre: 'Cuestionario para padres sobre utilización de funciones e intenciones comunicativas', archivo: 'Cuestionario de intenciones comunicativas' },
+    { nombre: 'Escala para la aparición del lenguaje receptivo y expresivo (R.E.E.L.)', archivo: 'Escala REEL OFICIAL', paginas: paginasDe('reel', 'Escala R.E.E.L.') },
+    { nombre: 'CSBS-DP: Cuestionario del bebé y niño pequeño', archivo: 'CSBS-DP CUESTIONARIO', paginas: paginasDe('csbs-cuestionario', 'CSBS-DP Cuestionario') },
+    { nombre: 'CSBS-DP: criterios de puntuación del Cuestionario del bebé y niño pequeño', archivo: 'CSBS-DP Puntajes', paginas: paginasDe('csbs-puntajes', 'CSBS-DP Puntajes') },
+    {
+      nombre: 'Cuestionario para padres sobre utilización de funciones e intenciones comunicativas',
+      archivo: 'Cuestionario de intenciones comunicativas',
+      paginas: paginasDe('intenciones', 'Cuestionario de intenciones comunicativas'),
+    },
   ],
   nota: 'El PICT-24 es una propuesta académica no estandarizada, sin puntos de corte validados en población peruana; no debe utilizarse como instrumento clínico validado.',
   rangos: pict24.rangos,
@@ -46,7 +58,7 @@ const fichaPict24: EvidenciaProtocolo = {
     { letra: 'R', nombre: 'Receptivo' },
     { letra: 'E', nombre: 'Expresivo' },
     { letra: 'S', nombre: 'Social/pragmático' },
-    { letra: 'I', nombre: null },
+    { letra: 'I', nombre: 'Interacción' },
     { letra: 'J', nombre: 'Juego' },
   ],
   registro: pict24.parrafos.find((p) => p.startsWith('Marque UNA opción')) ?? '',

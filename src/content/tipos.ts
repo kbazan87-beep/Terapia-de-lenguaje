@@ -181,7 +181,30 @@ export type EvidenciaProtocolo = {
   archivo: { href: string; nombre: string; descarga: string }
 }
 
-export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria | EvidenciaVideo | EvidenciaProtocolo
+/** Ensayo individual: visor de páginas, descarga directa del PDF y sus referencias. */
+export type EvidenciaEnsayo = {
+  tipo: 'ensayo'
+  id: string
+  titulo: string
+  descripcion: string
+  referencias: string[]
+  paginas: { src: string; alt: string }[]
+  archivo: { href: string; nombre: string }
+}
+
+/** Evolución del portafolio: se genera a partir del registro de semanas ya publicadas. */
+export type EvidenciaRecorrido = {
+  tipo: 'recorrido'
+  id: string
+  titulo: string
+  descripcion: string
+  /** Semanas que se muestran (de la 1 a `hasta`). */
+  hasta: number
+  /** Cómo organicé cada semana del portafolio. */
+  organizacion: { titulo: string; texto: string }[]
+}
+
+export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria | EvidenciaVideo | EvidenciaProtocolo | EvidenciaEnsayo | EvidenciaRecorrido
 
 /** Bloques de contenido teórico. Cada semana combina los que necesita su tema. */
 export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } & (

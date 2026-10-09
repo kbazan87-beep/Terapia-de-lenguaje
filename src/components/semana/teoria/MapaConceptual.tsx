@@ -171,7 +171,8 @@ export function MapaConceptual({ mapa, original }: Props) {
       </div>
       {conector(ramasDistintas ? undefined : ramas[0]?.relacion)}
 
-      <div className="grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-4">{ramas.map(rama)}</div>
+      {/* Con dos ramas se usan dos columnas anchas; con más, hasta cuatro. */}
+      <div className={`grid items-start gap-4 sm:grid-cols-2 ${ramas.length === 2 ? '' : 'xl:grid-cols-4'}`}>{ramas.map(rama)}</div>
 
       <div aria-hidden className="mx-auto mt-4 hidden h-6 w-3/4 rounded-b-3xl border-x border-b border-petroleo-300 xl:block" />
       <div aria-hidden className="mx-auto h-5 w-px bg-petroleo-300" />

@@ -9,6 +9,8 @@ export function Practica({ semana }: { semana: Semana }) {
   const sesion = semana.sesiones.find((s) => s.tipo === 'Práctica')
   const directorio = `${semana.slug}-practica-evidencia`
   const tablaDirectorio = semana.evidencias.practica.find((e): e is EvidenciaTabla => e.tipo === 'tabla' && e.columnaGrupo !== undefined)
+  // Una semana sin evidencia de práctica publicada no muestra el apartado ni el botón que lleva a él.
+  const hayEvidencia = semana.evidencias.practica.length > 0
 
   return (
     <div className="space-y-6">
@@ -50,9 +52,11 @@ export function Practica({ semana }: { semana: Semana }) {
             <Paso n={3} icono={<FileSpreadsheet className="size-5" aria-hidden />} titulo="Producto elaborado" claro />
             <p className="mt-4 font-display text-xl leading-snug">{p.producto}</p>
           </div>
-          <a href={`#${directorio}`} className="group inline-flex items-center justify-between gap-3 rounded-full bg-white px-5 py-3 text-sm font-semibold text-petroleo-900 hover:bg-coral-50">
-            {p.evidencia.boton} <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />
-          </a>
+          {hayEvidencia && (
+            <a href={`#${directorio}`} className="group inline-flex items-center justify-between gap-3 rounded-full bg-white px-5 py-3 text-sm font-semibold text-petroleo-900 hover:bg-coral-50">
+              {p.evidencia.boton} <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />
+            </a>
+          )}
         </Revelar>
 
         {/* 4. Aprendizaje y aplicación comunitaria */}
@@ -66,7 +70,7 @@ export function Practica({ semana }: { semana: Semana }) {
         </Revelar>
       </div>
 
-      <section id={directorio} aria-labelledby={`${directorio}-titulo`} className="scroll-mt-40 pt-10">
+      {hayEvidencia && <section id={directorio} aria-labelledby={`${directorio}-titulo`} className="scroll-mt-40 pt-10">
         <Revelar className="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-linea pt-10">
           <h3 id={`${directorio}-titulo`} className="font-display text-2xl font-semibold text-petroleo-900 sm:text-3xl">{p.evidencia.titulo}</h3>
           <p className="w-full text-gris sm:w-auto sm:flex-1 sm:text-right">{p.evidencia.descripcion}</p>
@@ -77,7 +81,7 @@ export function Practica({ semana }: { semana: Semana }) {
           </Revelar>
         )}
         <BloqueEvidencias evidencias={semana.evidencias.practica} procedencia="Evidencia de práctica" />
-      </section>
+      </section>}
     </div>
   )
 }

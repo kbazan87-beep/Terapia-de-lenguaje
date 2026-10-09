@@ -7,6 +7,8 @@ import { FichaTematica } from './FichaTematica'
 import { GaleriaMateriales } from './GaleriaMateriales'
 import { VideoEvidencia } from './VideoEvidencia'
 import { ExploradorProtocolo } from './ExploradorProtocolo'
+import { EnsayoEvidencia } from './EnsayoEvidencia'
+import { LineaRecorrido } from './LineaRecorrido'
 
 /** Evidencias integradas en un apartado (Teoría o Práctica), con su etiqueta de procedencia. */
 export function BloqueEvidencias({ evidencias, procedencia }: { evidencias: Evidencia[]; procedencia: string }) {
@@ -25,7 +27,7 @@ export function BloqueEvidencias({ evidencias, procedencia }: { evidencias: Evid
                 <h4 className="mt-1 font-display text-xl font-semibold text-petroleo-900">{e.titulo}</h4>
                 <p className="mt-1 max-w-3xl text-gris">{e.descripcion}</p>
               </div>
-              {e.tipo === 'tabla' ? <TablaEvidencia evidencia={e} /> : e.tipo === 'ficha' ? <FichaTematica evidencia={e} /> : e.tipo === 'galeria' ? <GaleriaMateriales evidencia={e} /> : e.tipo === 'video' ? <VideoEvidencia evidencia={e} /> : <ExploradorProtocolo evidencia={e} />}
+              {e.tipo === 'tabla' ? <TablaEvidencia evidencia={e} /> : e.tipo === 'ficha' ? <FichaTematica evidencia={e} /> : e.tipo === 'galeria' ? <GaleriaMateriales evidencia={e} /> : e.tipo === 'video' ? <VideoEvidencia evidencia={e} /> : e.tipo === 'protocolo' ? <ExploradorProtocolo evidencia={e} /> : e.tipo === 'ensayo' ? <EnsayoEvidencia evidencia={e} /> : <LineaRecorrido evidencia={e} />}
             </div>
           )}
         </Revelar>

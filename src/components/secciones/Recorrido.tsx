@@ -69,9 +69,9 @@ export function Recorrido({ semanas }: { semanas: Semana[] }) {
             <Revelar retraso={0.12} className={['md:col-span-3', 'md:col-span-2', 'md:col-span-1'][semanas.length % 3]}>
               <div className="flex h-full flex-col justify-center rounded-3xl border border-dashed border-petroleo-300 p-6 text-gris">
                 <p className="eyebrow text-petroleo-500">
-                  Semanas {pendientes[0]} a {pendientes.at(-1)}
+                  {pendientes.length === 1 ? `Semana ${pendientes[0]}` : `Semanas ${pendientes[0]} a ${pendientes.at(-1)}`}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed">Se incorporarán cuando estén disponibles sus materiales.</p>
+                <p className="mt-2 text-sm leading-relaxed">{pendientes.length === 1 ? 'Se incorporará cuando estén disponibles sus materiales.' : 'Se incorporarán cuando estén disponibles sus materiales.'}</p>
               </div>
             </Revelar>
           )}

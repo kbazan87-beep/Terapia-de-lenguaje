@@ -26,16 +26,16 @@ async function comoBlob(href: string) {
 }
 
 /**
- * Descarga directa del Word. En el visor de artefactos (donde los enlaces de descarga están bloqueados)
+ * Descarga directa de un archivo (Word o PDF). En el visor de artefactos (donde los enlaces de descarga están bloqueados)
  * usa la capacidad «downloads», que pide confirmación al visitante; fuera de él, un enlace normal.
  */
-function BotonDescarga({ href, nombre }: { href: string; nombre: string }) {
+export function BotonDescarga({ href, nombre, etiqueta = 'Descargar ficha PICT-24' }: { href: string; nombre: string; etiqueta?: string }) {
   const [estado, setEstado] = useState<string | null>(null)
   const clase = 'inline-flex items-center gap-2 rounded-full bg-lavanda-700 px-5 py-3 text-sm font-semibold text-white hover:bg-petroleo-900'
   if (import.meta.env.MODE !== 'artifact') {
     return (
       <a href={href} download={nombre} className={clase}>
-        <Download className="size-4" aria-hidden /> Descargar ficha PICT-24
+        <Download className="size-4" aria-hidden /> {etiqueta}
       </a>
     )
   }
@@ -54,7 +54,7 @@ function BotonDescarga({ href, nombre }: { href: string; nombre: string }) {
   return (
     <span className="inline-flex flex-wrap items-center gap-3">
       <button type="button" onClick={descargar} className={clase}>
-        <Download className="size-4" aria-hidden /> Descargar ficha PICT-24
+        <Download className="size-4" aria-hidden /> {etiqueta}
       </button>
       <span className="text-xs text-gris" aria-live="polite">{estado}</span>
     </span>

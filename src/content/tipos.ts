@@ -106,6 +106,16 @@ export type EvidenciaFicha = {
   celdas: { ref: string; valor: string }[]
 }
 
+export type SegmentoGuion = {
+  titulo: string
+  inicio: string
+  fin: string
+  voz: string | null
+  acotacion: string | null
+  parrafos: string[]
+  enPantalla: string | null
+}
+
 /** Conjunto de materiales elaborados (infografía, díptico, presentación…), cada uno con sus imágenes. */
 export type EvidenciaGaleria = {
   tipo: 'galeria'
@@ -118,8 +128,12 @@ export type EvidenciaGaleria = {
     formato: string
     modalidad: string
     descripcion: string
+    /** Destinatarios previstos para el material, según la ficha de práctica. */
+    publico?: string
     /** Cada imagen es una página o cara del material original. */
     paginas: { src: string; alt: string; etiqueta: string }[]
+    /** Guion por segmentos (para materiales audiovisuales). */
+    guion?: SegmentoGuion[]
   }[]
   /** Materiales mencionados en la actividad cuyo archivo no se incluyó en los documentos. */
   noIncluidos?: string[]

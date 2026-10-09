@@ -1,0 +1,83 @@
+[
+ {
+  "titulo": "INTRODUCCIÓN",
+  "inicio": "0:00",
+  "fin": "0:30",
+  "voz": "KIMBERLI",
+  "acotacion": "Sonriendo, mirando a cámara, con un tono cálido y cercano",
+  "parrafos": [
+   "Hola, soy Kimberli Cardozo y soy estudiante de Terapia de Lenguaje en la Universidad Peruana Cayetano Heredia.",
+   "Hoy quiero hablarles de algo que quizás han visto pero no sabían cómo se llamaba. Imaginen a un niño que quiere hablar, que quiere contar lo que le pasó en el día, pero las palabras no le salen bien. O tal vez las entiende, pero cuando quiere responder, todo se enreda.",
+   "Eso es el Trastorno del Desarrollo del Lenguaje, o TDL. Y hoy quiero explicarles de qué se trata, cómo reconocerlo y cómo podemos ayudar."
+  ],
+  "enPantalla": null
+ },
+ {
+  "titulo": "DEFINICIÓN",
+  "inicio": "0:30",
+  "fin": "1:15",
+  "voz": "KIMBERLI",
+  "acotacion": null,
+  "parrafos": [
+   "¿Qué es el TDL?",
+   "Es una condición que afecta la forma en que el cerebro de un niño aprende y usa su propio idioma. Es como si el niño fuera un extranjero en su propio país, en su propio idioma. Escucha a todos hablar, quiere hacerlo también, pero le cuesta mucho más trabajo que a los demás.",
+   "Y algo muy importante: el TDL no es culpa de nadie. No es porque los papás no le hablen suficiente, no es porque sea flojo, no es porque no quiera. Es simplemente que su cerebro procesa el lenguaje de manera diferente.",
+   "De hecho, es más común de lo que pensamos: afecta a 1 de cada 14 niños. Eso quiere decir que en un salón de clases de 28 alumnos, probablemente hay 2 niños con TDL. Y muchas veces no están diagnosticados."
+  ],
+  "enPantalla": "Aparece en pantalla: \"1 de cada 14 niños\" con un ícono de un salón de clases"
+ },
+ {
+  "titulo": "CARACTERÍSTICAS",
+  "inicio": "1:15",
+  "fin": "2:30",
+  "voz": "KIMBERLI",
+  "acotacion": null,
+  "parrafos": [
+   "¿Y cómo nos damos cuenta? Cada niño es diferente, pero hay algunas señales.",
+   "Primero, cuando habla:",
+   "Imaginen a un niño de 5 años que quiere decir \"quiero agua\", pero dice \"quero aba\". O que quiere decir \"pelota\" y dice \"pota\". Se le entiende, pero con dificultad. Como si tuviera algo en la boca.",
+   "Segundo, con las palabras:",
+   "Le cuesta recordar cómo se llaman las cosas. En lugar de decir \"cuchara\", dice \"eso que sirve para comer\". O en lugar de \"auto\", dice \"el que tiene ruedas y va por la calle\". Tiene menos palabras que otros niños de su edad.",
+   "Tercero, cuando arma oraciones:",
+   "Un niño de 6 años normalmente diría: \"Los niños están jugando en el parque\". Pero un niño con TDL podría decir: \"Niño jugando parque\". Se come palabras pequeñitas como \"los\", \"están\", \"en\", \"el\". Las frases son más cortas y desordenadas.",
+   "Cuarto, cuando conversa:",
+   "Le cuesta entender los chistes o las bromas. Si le dices \"¡Qué rápido eres!\" cuando claramente llegó último, él piensa que de verdad le estás diciendo que es rápido. Todo lo toma literal. También le cuesta esperar su turno para hablar o seguir una conversación larga.",
+   "Y algo más:",
+   "Muchos de estos niños también tienen problemas para prestar atención, o les cuesta aprender a leer y escribir. Por eso es tan importante detectarlo a tiempo."
+  ],
+  "enPantalla": "Aparecen en pantalla íconos simples representando cada área: hablar, palabras, oraciones, conversar"
+ },
+ {
+  "titulo": "ACTIVIDADES",
+  "inicio": "2:30",
+  "fin": "3:30",
+  "voz": "KIMBERLI",
+  "acotacion": null,
+  "parrafos": [
+   "Pero aquí viene lo más importante: podemos ayudar. Y no necesitamos ser expertos para hacerlo.",
+   "En casa y en la escuela podemos hacer cosas muy simples:",
+   "Uno: Hablar más despacio. No means decirle al niño \"habla bien\", sino que nosotros hablemos lento, claro, mirándolo a los ojos. Si le pedimos algo, mejor decir \"Trae tus zapatos\" en lugar de \"Anda a tu cuarto, busca los zapatos que están debajo de la cama y tráelos\".",
+   "Dos: Leer cuentos juntos todos los días. Preguntarle \"¿Qué crees que va a pasar?\" o \"¿Cómo se llama este animal?\". Señalar las imágenes. Repetir palabras. Eso ayuda muchísimo.",
+   "Tres: Jugar y hablar sobre lo que están haciendo. Mientras construyen una torre, decir \"Estamos poniendo un bloque rojo encima del azul\". Mientras comen, decir \"¿Qué estás comiendo? Sí, es una manzana, es roja y dulce\".",
+   "Cuatro: Ponerle nombre a todo lo que hacemos. Si el niño dice \"agua\", nosotros podemos responder \"Sí, quieres agua. Toma tu vaso de agua\". Así le mostramos la frase completa sin corregirlo de forma dura.",
+   "Cinco: Cuidado con las pantallas. El lenguaje se aprende hablando con personas, no viendo videos. La Organización Mundial de la Salud recomienda evitar pantallas en menores de 2 años y limitarlas mucho en niños pequeños.",
+   "Y seis: Buscar ayuda profesional. Un terapeuta de lenguaje puede evaluar al niño y darle las herramientas que necesita. Cuanto más temprano empecemos, mejores resultados vamos a tener."
+  ],
+  "enPantalla": "Aparecen en pantalla imágenes simples: familia leyendo un cuento, niño jugando con bloques, ícono de pantalla tachada, terapeuta con niño"
+ },
+ {
+  "titulo": "CIERRE",
+  "inicio": "3:30",
+  "fin": "4:00",
+  "voz": "KIMBERLI",
+  "acotacion": null,
+  "parrafos": [
+   "El TDL es un trastorno invisible. Estos niños no tienen una marca en la frente que diga 'tengo TDL'. A veces parecen distraídos, a veces parecen tímidos, a veces parecen desobedientes. Pero en realidad, solo les cuesta comunicarse.",
+   "Con comprensión, paciencia y el apoyo adecuado, estos niños pueden salir adelante. Pueden aprender, pueden hacer amigos, pueden lograr todo lo que se propongan.",
+   "Si conocen a un niño con estas características, no esperen. La ayuda temprana cambia vidas.",
+   "Es por eso que los invito a informarse, a preguntar y, sobre todo, a escuchar. Porque detrás de cada dificultad para hablar, hay una persona que quiere comunicarse.",
+   "¡Gracias por ver!"
+  ],
+  "enPantalla": null
+ }
+]

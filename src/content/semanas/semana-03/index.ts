@@ -1,4 +1,5 @@
-import type { EvidenciaGaleria, EvidenciaImagen, Semana } from '../../tipos'
+import type { EvidenciaGaleria, EvidenciaImagen, SegmentoGuion, Semana } from '../../tipos'
+import guionVideo from './guion-video.json'
 import padlet from '../../../assets/semana-3/padlet-a-la-practica.jpg'
 import infografia from '../../../assets/semana-3/infografia-tdl.jpg'
 import dipticoExterior from '../../../assets/semana-3/diptico-exterior.jpg'
@@ -54,6 +55,7 @@ const materiales: EvidenciaGaleria = {
       nombre: 'Infografía',
       formato: 'Imagen',
       modalidad: 'Individual',
+      publico: 'las familias',
       descripcion: '«Trastorno del Desarrollo del Lenguaje (TDL): comprenderlo también es incluirlo». Tres bloques: ¿qué es el TDL?, ¿cómo reconocemos a un niño con TDL? y ¿cómo podemos ayudar en casa y en la escuela?',
       paginas: [
         {
@@ -68,6 +70,7 @@ const materiales: EvidenciaGaleria = {
       nombre: 'Díptico',
       formato: 'Impreso, 2 caras',
       modalidad: 'Individual',
+      publico: 'las familias',
       descripcion: 'Díptico para familias con el lema «Comprenderlo también es incluirlo». El interior explica qué es el TDL, cómo reconocerlo y cómo ayudar, con ejemplos para cada recomendación.',
       paginas: [
         {
@@ -87,6 +90,7 @@ const materiales: EvidenciaGaleria = {
       nombre: 'Charla en PPT',
       formato: `Presentación, ${diapositivas.length} diapositivas`,
       modalidad: 'Individual',
+      publico: 'docentes y promotores',
       descripcion: '«Guía educativa: Trastorno del Desarrollo del Lenguaje (TDL). Definición, características y actividades», dirigida a docentes y promotores.',
       paginas: diapositivas.map((src, i) => ({
         src,
@@ -94,8 +98,18 @@ const materiales: EvidenciaGaleria = {
         alt: `Diapositiva ${i + 1} de la guía educativa sobre el TDL${titulosCharla[i] ? `: ${titulosCharla[i]}` : ''}.`,
       })),
     },
+    {
+      id: 'video',
+      nombre: 'Guion de video',
+      formato: 'Video de 4 minutos, 5 segmentos',
+      modalidad: 'Individual',
+      publico: 'las redes',
+      descripcion: '«¿Qué es el TDL?»: guion para un video en el que presento qué es el TDL, cómo reconocerlo y cómo podemos ayudar en casa y en la escuela.',
+      paginas: [],
+      guion: guionVideo as SegmentoGuion[],
+    },
   ],
-  noIncluidos: ['el guion del video de 4 minutos', 'el guion grupal del TikTok'],
+  noIncluidos: ['el guion grupal del TikTok'],
 }
 
 export const semana03: Semana = {
@@ -330,7 +344,7 @@ export const semana03: Semana = {
     ],
     evidencia: {
       titulo: 'Del conocimiento técnico a la comunidad',
-      descripcion: 'Evidencia de la práctica: infografía, díptico y charla en PPT.',
+      descripcion: 'Evidencia de la práctica: infografía, díptico, charla en PPT y guion de video, cada uno pensado para un público.',
       boton: 'Ver los materiales',
     },
   },

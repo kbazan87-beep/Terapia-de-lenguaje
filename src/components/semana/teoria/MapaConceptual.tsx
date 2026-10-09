@@ -139,7 +139,7 @@ export function MapaConceptual({ mapa, original }: Props) {
           {conector(h.relacion)}
           {nodo(h, 'hoja')}
           {h.hijos && (
-            <div className="mt-2 grid grid-cols-2 gap-1.5">
+            <div className={`mt-2 grid grid-cols-2 gap-1.5 ${h.fichasEnColumna ? 'xl:grid-cols-1' : ''}`}>
               {h.hijos.map((n) =>
                 n.hijos ? (
                   <div key={n.id} className="col-span-2">

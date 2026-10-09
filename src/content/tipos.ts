@@ -32,6 +32,8 @@ export type NodoMapa = {
   relacion?: string
   /** En una rama: muestra sus hijos directamente como fichas compactas. */
   compacto?: boolean
+  /** Muestra las fichas hijas en una sola columna en pantallas anchas (para títulos largos). */
+  fichasEnColumna?: boolean
   hijos?: NodoMapa[]
 }
 
@@ -139,7 +141,22 @@ export type EvidenciaGaleria = {
   noIncluidos?: string[]
 }
 
-export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria
+/** Video de un trabajo (por ejemplo, grupal), con sus integrantes tal como figuran en el documento. */
+export type EvidenciaVideo = {
+  tipo: 'video'
+  id: string
+  titulo: string
+  descripcion: string
+  /** Ruta de la copia optimizada para la web (el original se conserva en el repositorio). */
+  src: string
+  poster: string
+  formato: string
+  integrantes?: { titulo: string; nombres: string[] }
+  /** Enlace a materiales relacionados de otra semana. */
+  relacionado?: { titulo: string; texto: string; href: string; boton: string; items: string[] }
+}
+
+export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria | EvidenciaVideo
 
 /** Bloques de contenido teórico. Cada semana combina los que necesita su tema. */
 export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } & (

@@ -5,6 +5,7 @@ import { TablaEvidencia } from './TablaEvidencia'
 import { TarjetaImagen } from './TarjetaImagen'
 import { FichaTematica } from './FichaTematica'
 import { GaleriaMateriales } from './GaleriaMateriales'
+import { VideoEvidencia } from './VideoEvidencia'
 
 /** Evidencias integradas en un apartado (Teoría o Práctica), con su etiqueta de procedencia. */
 export function BloqueEvidencias({ evidencias, procedencia }: { evidencias: Evidencia[]; procedencia: string }) {
@@ -23,7 +24,7 @@ export function BloqueEvidencias({ evidencias, procedencia }: { evidencias: Evid
                 <h4 className="mt-1 font-display text-xl font-semibold text-petroleo-900">{e.titulo}</h4>
                 <p className="mt-1 max-w-3xl text-gris">{e.descripcion}</p>
               </div>
-              {e.tipo === 'tabla' ? <TablaEvidencia evidencia={e} /> : e.tipo === 'ficha' ? <FichaTematica evidencia={e} /> : <GaleriaMateriales evidencia={e} />}
+              {e.tipo === 'tabla' ? <TablaEvidencia evidencia={e} /> : e.tipo === 'ficha' ? <FichaTematica evidencia={e} /> : e.tipo === 'galeria' ? <GaleriaMateriales evidencia={e} /> : <VideoEvidencia evidencia={e} />}
             </div>
           )}
         </Revelar>

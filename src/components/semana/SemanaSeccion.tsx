@@ -1,4 +1,4 @@
-import { useRef, useState, type KeyboardEvent } from 'react'
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { CalendarDays } from 'lucide-react'
 import type { Semana } from '../../content/tipos'
@@ -13,6 +13,27 @@ export function SemanaSeccion({ semana, indice }: { semana: Semana; indice: stri
   const pestanas = useRef<(HTMLButtonElement | null)[]>([])
   const ancla = useRef<HTMLDivElement>(null)
   const base = semana.slug
+
+  // Un enlace interno a un apartado (p. ej., «#semana-4-practica-evidencia») abre su pestaña y lleva hasta él.
+  useEffect(() => {
+    const abrir = () => {
+      const destino = decodeURIComponent(location.hash.slice(1))
+      const apartado = apartados.find((a) => destino.startsWith(`${base}-${a.id}`))
+      if (!apartado) return
+      setActivo(apartado.id)
+      // El apartado aparece tras la animación de cambio de pestaña: se espera a que exista antes de desplazarse.
+      let intentos = 0
+      const llevar = () => {
+        const el = document.getElementById(destino)
+        if (el) el.scrollIntoView({ block: 'start' })
+        else if (++intentos < 30) setTimeout(llevar, 60)
+      }
+      setTimeout(llevar, 60)
+    }
+    abrir()
+    window.addEventListener('hashchange', abrir)
+    return () => window.removeEventListener('hashchange', abrir)
+  }, [base])
 
   const ir = (id: ApartadoId, enfocar = false) => {
     setActivo(id)

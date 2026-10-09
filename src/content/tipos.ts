@@ -243,7 +243,22 @@ export type EvidenciaRevision = {
   archivo: { href: string; nombre: string }
 }
 
+/** Guion de diálogos por escenas (p. ej., un TikTok grupal), con sus textos tal como figuran en el documento. */
+export type EvidenciaDialogo = {
+  tipo: 'dialogo'
+  id: string
+  titulo: string
+  descripcion: string
+  introduccion: string
+  escenas: { lugar: string; lineas: { voz: string; texto: string }[] }[]
+  integrantes: { titulo: string; nombres: string[] }
+  /** Enlace interno a la evidencia que se elaboró a partir de este guion. */
+  relacionado: { texto: string; href: string; boton: string }
+  archivo: { href: string; nombre: string }
+}
+
 export type Evidencia =
+  | EvidenciaDialogo
   | EvidenciaImagen
   | EvidenciaTabla
   | EvidenciaFicha

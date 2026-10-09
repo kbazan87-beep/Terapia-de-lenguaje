@@ -1,5 +1,7 @@
-import type { EvidenciaGaleria, EvidenciaImagen, SegmentoGuion, Semana } from '../../tipos'
+import type { EvidenciaDialogo, EvidenciaGaleria, EvidenciaImagen, SegmentoGuion, Semana } from '../../tipos'
 import guionVideo from './guion-video.json'
+import guionTiktok from './guion-tiktok.json'
+import wordGuionTiktok from '../../../assets/semana-3/guion-tiktok.docx?url'
 import padlet from '../../../assets/semana-3/padlet-a-la-practica.jpg'
 import infografia from '../../../assets/semana-3/infografia-tdl.jpg'
 import dipticoExterior from '../../../assets/semana-3/diptico-exterior.jpg'
@@ -109,7 +111,26 @@ const materiales: EvidenciaGaleria = {
       guion: guionVideo as SegmentoGuion[],
     },
   ],
-  noIncluidos: ['el guion grupal del TikTok'],
+}
+
+const guionGrupal: EvidenciaDialogo = {
+  tipo: 'dialogo',
+  id: 'guion-tiktok',
+  titulo: 'Guion grupal de TikTok — Trastorno del Desarrollo del Lenguaje (TDL)',
+  descripcion: 'Evidencia de la planificación del video educativo que elaboramos en grupo.',
+  introduccion:
+    'Con este video quisimos que las familias y la comunidad reconozcan algunas señales del TDL y sepan que, si las dificultades persisten, pueden consultar a un terapeuta de lenguaje. El guion empieza con preguntas a los padres, explica qué es el TDL y cierra con un llamado a la acción.',
+  escenas: guionTiktok,
+  integrantes: {
+    titulo: 'Integrantes del trabajo grupal',
+    nombres: ['Kimberli Zaleth Cardozo Casimiro', 'Mayra Ayala', 'Ximena Abanto', 'Claudia de la Cruz', 'Alessandra Padilla', 'Daniela Yupanqui', 'Arantza Gamarra', 'Ana Purca'],
+  },
+  relacionado: {
+    texto: 'Este guion fue la base del video de difusión comunitaria presentado en la práctica de la semana 4.',
+    href: '#semana-4-practica-evidencia',
+    boton: 'Ver el video en la semana 4',
+  },
+  archivo: { href: wordGuionTiktok, nombre: 'Evidencia practica semana 3 - Guion TikTok.docx' },
 }
 
 export const semana03: Semana = {
@@ -417,7 +438,7 @@ export const semana03: Semana = {
     ],
   },
 
-  evidencias: { teoria: [evidenciaPadlet], practica: [materiales] },
+  evidencias: { teoria: [evidenciaPadlet], practica: [materiales, guionGrupal] },
 
   referencias: [
     {

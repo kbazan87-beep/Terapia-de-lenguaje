@@ -15,6 +15,7 @@ const tipos: Record<Evidencia['tipo'], string> = {
   recorrido: 'Portafolio',
   caso: 'Caso',
   revision: 'Comparación',
+  dialogo: 'Guion',
 }
 
 const iconos = [BookOpen, Wrench, MessageCircleHeart]

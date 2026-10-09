@@ -1,0 +1,85 @@
+[
+ {
+  "lugar": "Patio La Neurona",
+  "lineas": [
+   {
+    "voz": "Claudia",
+    "texto": "¿Tu hijo habla menos que otros niños de su edad?"
+   },
+   {
+    "voz": "Mayra",
+    "texto": "¿Le cuesta formar oraciones o encontrar las palabras que quiere decir?"
+   }
+  ]
+ },
+ {
+  "lugar": "FASPA",
+  "lineas": [
+   {
+    "voz": "Kimberli",
+    "texto": "Podría ser una señal de Trastorno del Desarrollo del Lenguaje, o TDL."
+   },
+   {
+    "voz": "Daniela",
+    "texto": "¿Qué es TDL?"
+   },
+   {
+    "voz": "Ana",
+    "texto": "Yo te lo explico…"
+   },
+   {
+    "voz": "Ana",
+    "texto": "El TDL es una dificultad que afecta la adquisición y el uso del lenguaje."
+   },
+   {
+    "voz": "Kimberli",
+    "texto": "Puede aparecer de distintas formas: a algunos niños les cuesta aprender palabras nuevas, formar oraciones…"
+   },
+   {
+    "voz": "Ana",
+    "texto": "también comprender indicaciones, contar lo que pasó u organizar sus ideas."
+   },
+   {
+    "voz": "Alessandra",
+    "texto": "Pero recuerda: no todos los niños con TDL tienen las mismas dificultades. Cada uno puede presentar un perfil diferente."
+   },
+   {
+    "voz": "Arantza",
+    "texto": "Además, el TDL puede confundirse con un retraso del lenguaje, dificultades para pronunciar sonidos, problemas auditivos, autismo u otras condiciones del desarrollo."
+   },
+   {
+    "voz": "Alessandra",
+    "texto": "Por eso, es importante no diagnosticarlo solo por observar que un niño habla poco."
+   }
+  ]
+ },
+ {
+  "lugar": "Patio La Neurona",
+  "lineas": [
+   {
+    "voz": "Mayra",
+    "texto": "¿Qué podemos hacer?"
+   },
+   {
+    "voz": "Daniela",
+    "texto": "Observar cómo comprende, cómo se expresa y cómo se comunica."
+   },
+   {
+    "voz": "Mayra",
+    "texto": "Si las dificultades persisten, consultar con un profesional, como un terapeuta de lenguaje o especialista en desarrollo infantil."
+   },
+   {
+    "voz": "Ximena",
+    "texto": "El tiempo de mejora depende de cada niño, pero la evaluación y el apoyo temprano pueden favorecer grandes avances."
+   },
+   {
+    "voz": "Arantza",
+    "texto": "Con acompañamiento, práctica y estrategias adecuadas, pueden mejorar su vocabulario, comprensión y comunicación diaria."
+   },
+   {
+    "voz": "Claudia",
+    "texto": "¿Has notado alguna de estas señales en tu hijo? Escríbelo en los comentarios y comparte este video con otros papás."
+   }
+  ]
+ }
+]

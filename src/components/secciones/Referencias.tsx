@@ -1,11 +1,12 @@
-import type { Semana } from '../../content/tipos'
+import type { Referencia, Semana } from '../../content/tipos'
 import { TextoConFormato } from '../ui/Cita'
 import { EncabezadoSeccion } from '../ui/EncabezadoSeccion'
 import { Revelar } from '../ui/Revelar'
 
 /** Reúne las referencias de todas las semanas, sin duplicados, en el orden de los documentos. */
 export function Referencias({ semanas, indice }: { semanas: Semana[]; indice: string }) {
-  const unicas = new Map(semanas.flatMap((s) => s.referencias).map((r) => [r.id, r]))
+  const unicas = new Map<string, Referencia>()
+  semanas.flatMap((s) => s.referencias).forEach((r) => !unicas.has(r.id) && unicas.set(r.id, r))
   const lista = [...unicas.values()]
 
   return (

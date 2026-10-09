@@ -106,7 +106,26 @@ export type EvidenciaFicha = {
   celdas: { ref: string; valor: string }[]
 }
 
-export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha
+/** Conjunto de materiales elaborados (infografía, díptico, presentación…), cada uno con sus imágenes. */
+export type EvidenciaGaleria = {
+  tipo: 'galeria'
+  id: string
+  titulo: string
+  descripcion: string
+  materiales: {
+    id: string
+    nombre: string
+    formato: string
+    modalidad: string
+    descripcion: string
+    /** Cada imagen es una página o cara del material original. */
+    paginas: { src: string; alt: string; etiqueta: string }[]
+  }[]
+  /** Materiales mencionados en la actividad cuyo archivo no se incluyó en los documentos. */
+  noIncluidos?: string[]
+}
+
+export type Evidencia = EvidenciaImagen | EvidenciaTabla | EvidenciaFicha | EvidenciaGaleria
 
 /** Bloques de contenido teórico. Cada semana combina los que necesita su tema. */
 export type BloqueTeoria = { id: string; titulo: string; descripcion?: string } & (
